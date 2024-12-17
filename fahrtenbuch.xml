@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fahrtenbuch>
+  <fahrten id="1">
+    <name>test</name>
+    <wohnort>test</wohnort>
+    <zweck>test</zweck>
+    <datum>2024-12-18</datum>
+    <uhrzeit_von>14:16</uhrzeit_von>
+    <uhrzeit_bis>16:16</uhrzeit_bis>
+    <km_start>2</km_start>
+    <Km_end>3</Km_end>
+    <Kmdiff>1</Kmdiff>
+  </fahrten>
+</fahrtenbuch>
