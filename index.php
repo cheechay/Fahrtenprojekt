@@ -67,10 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="de">
 <head>
     <title>Erfolgreich XML speichert</title>
-    
-    
-
-
     <style>
         .container{
             max-width: 800px;
@@ -122,6 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         margin-bottom: 20px;
         vertical-align: middle;
         }
+
         th{
            text-align: left;
         }
@@ -172,7 +169,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </td>
         </tr>
     </table>
-    
     </fieldset>
     </div>
     </body>
