@@ -27,8 +27,7 @@
     border-collapse: separate;
   }
 
-  #table_output{
-  
+  .table_output{
     height: 100%;
     visibility: visible;
     opacity: 1;

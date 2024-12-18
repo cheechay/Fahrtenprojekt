@@ -159,8 +159,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <tr>
             <td><label for="liste">c.Alle Fahrten listen anschauen</label></td>
             <td><form action="index.php">
-            <button type="submit" id="button" >Fahrtenbuch</button>
-            </form>
+            <button class='button' role="button" id="button">Fahrtenbuch</button>
+            </form> 
             </td>
         </tr>
     </table>
@@ -170,7 +170,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ​‌‌‍⁡⁣⁣⁢‍<!-- 𝗼𝘂𝘁𝗽𝘂𝘁s -->⁡​
 
-    <table class="liste" id = 'table_output'>
+<div class="liste table_output">
+<table id = 'table_output'>
         <thead>
             <th>Name</th>
             <th>Wohnort</th>
@@ -206,7 +207,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ?>
         </tbody>
     </table>
+</div>
+
+
     </body>
 
-    <script src='output.js'></script>
+    <script>
+
+const button = document.querySelector('.button');
+const tableBody = document.querySelector('.table_output');
+
+button.addEventListener('click', function() {
+   
+    if (tableBody.classList.contains('liste')) {
+      // If the table body already has the 'liste' class, remove it
+      tableBody.classList.remove('liste');
+      console.log('test');
+      tableBody.classList.add('table_output');
+    } else {
+      // Otherwise, add the 'liste' class
+      tableBody.classList.add('liste');
+    }
+  });
+
+ 
+
+    </script>
 </html>
