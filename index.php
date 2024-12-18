@@ -1,19 +1,20 @@
 <?php
-
+ 
 //testen ob Method als POST ist..
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $datum = $_POST['datum'];
+    $name = $_POST['name']; // $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $name = filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
+    $wohnort = filter_input(INPUT_POST, 'wohnort', FILTER_DEFAULT);
+    $zweck = filter_input(INPUT_POST, 'zweck', FILTER_DEFAULT);
+    //$datum = filter_input(INPUT_POST, 'datum', FILTER_DEFAULT);
+    $km_start = filter_input(INPUT_POST, 'km_start', FILTER_DEFAULT);
+    $km_end = filter_input(INPUT_POST, 'km_end', FILTER_DEFAULT);
+    $uhrzeit_von = filter_input(INPUT_POST, 'uhrzeit_von',  FILTER_DEFAULT);
+    $uhrzeit_bis = filter_input(INPUT_POST, 'uhrzeit_bis',  FILTER_DEFAULT);
+    $kmdiff = filter_input(INPUT_POST, 'kmdiff',  FILTER_DEFAULT);
     // Get form data using filter_input() for sanitization
-    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-    $wohnort = filter_input(INPUT_POST, 'wohnort', FILTER_SANITIZE_STRING);
-    $zweck = filter_input(INPUT_POST, 'zweck', FILTER_SANITIZE_STRING);
-    $datum = filter_input(INPUT_POST, 'datum', FILTER_SANITIZE_STRING);
-    $km_start = filter_input(INPUT_POST, 'km_start', FILTER_SANITIZE_STRING);
-    $km_end = filter_input(INPUT_POST, 'km_end', FILTER_SANITIZE_STRING);
-    $uhrzeit_von = filter_input(INPUT_POST, 'uhrzeit_von',  FILTER_SANITIZE_STRING);
-    $uhrzeit_bis = filter_input(INPUT_POST, 'uhrzeit_bis',  FILTER_SANITIZE_STRING);
-    $kmdiff = filter_input(INPUT_POST, 'kmdiff',  FILTER_SANITIZE_STRING);
-    
-   
+
 
     // kmdiff nochmal in hintergrund berechnet, um sicher zu stellen
     $kmdiff= $km_end-$km_start;
@@ -58,15 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $root->appendChild($entry);
 
 // Datein würde in XML gespeichert
-    $xml->save($xmlFile);
-   
-    
+    $xml->save($xmlFile);    
 }
 ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <title>Erfolgreich XML speichert</title>
+    <link rel="stylesheet" href="output.css">
     <style>
         .container{
             max-width: 800px;
@@ -112,12 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-left: 120px;
             border-radius: 5px;
         }
-        table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-        vertical-align: middle;
-        }
+
 
         th{
            text-align: left;
@@ -163,13 +158,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </tr>
         <tr>
             <td><label for="liste">c.Alle Fahrten listen anschauen</label></td>
-            <td><form action="ausgabe.html">
-            <button type="submit" id="liste" >Fahrtenbuch</button>
+            <td><form action="index.php">
+            <button type="submit" id="button" >Fahrtenbuch</button>
             </form>
             </td>
         </tr>
     </table>
     </fieldset>
     </div>
+
+
+​‌‌‍⁡⁣⁣⁢‍<!-- 𝗼𝘂𝘁𝗽𝘂𝘁s -->⁡​
+
+    <table class="liste" id = 'table_output'>
+        <thead>
+            <th>Name</th>
+            <th>Wohnort</th>
+            <th>Zweck</th>
+            <th>Datum</th>
+            <th>Kilometer Start</th>
+            <th>Kilometer Ende</th>
+            <th>Kilometer Differenz</th>
+        </thead>
+        <tbody>
+            
+            <?php
+                $xml = simplexml_load_file('fahrtenbuch.xml') or die("Error: Cannot create object");
+                foreach ($xml->fahrten as $fahrt) {
+                    $name = $fahrt->name;
+                    $wohnort = $fahrt->wohnort;
+                    $zweck = $fahrt->zweck;
+                    $datum = $fahrt->datum;
+                    $km_start = $fahrt->km_start;
+                    $km_end = $fahrt->Km_end;
+                    $kmdiff = $fahrt->Kmdiff;
+
+                    echo "<tr>
+                            <td>$name</td>
+                            <td>$wohnort</td>
+                            <td>$zweck</td>
+                            <td>$datum</td>
+                            <td>$km_start</td>
+                            <td>$km_end</td>
+                            <td>$kmdiff</td>
+                          </tr>";
+                }
+            ?>
+        </tbody>
+    </table>
     </body>
+
+    <script src='output.js'></script>
 </html>

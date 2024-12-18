@@ -1,0 +1,43 @@
+#table_output th{
+    padding: 1rem;
+    background: #B6B6F2;
+    color: #fff;
+  }
+
+  #table_output td{
+    padding: 20px 15px 20px 15px;
+    border: solid 1px rgba(128, 128, 128, .4);
+
+  }
+
+  #table_output>th,tr,td{
+    padding: 20px 15px 20px 15px;
+    border-collapse: separate;
+  }
+
+  #table_output>tbody{
+    background-color: #F3F3F3;
+    border-collapse: separate;
+  }
+
+  #table_output table{
+    width: 700px;
+    margin: 0 auto;
+    border-radius: 8px;
+    border-collapse: separate;
+  }
+
+  #table_output{
+  
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition: 300ms ease-in-out;
+  }
+
+  .liste{
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+  }
