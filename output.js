@@ -11,3 +11,6 @@ button.addEventListener('click', function() {
       tableBody.classList.add('liste');
     }
   });
+
+  console.log('test');
+  
