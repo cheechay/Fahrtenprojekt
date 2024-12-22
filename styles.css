@@ -1,22 +1,24 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+
 }
 .contheader {
     text-align: center;
     width: 780px;
     padding: 10px;
     margin-bottom: 20px;
-    background-color:#54565865;
+    background-color:#7494ec;
     border-radius: 10px 10px 0 0;
+
 }
 
 h1{
     margin: 0;
     font-size: 40px;
-    color: black;
+    color: #fff;
 }
 .container
 {
@@ -48,7 +50,7 @@ input[type="number"]
     height: 30px;
     padding: 5px;
     font-size: 14px;
-    border: 1px solid rgb(69, 65, 65);
+    border: 1px solid rgb(69, 65, 65, 0.2);
     border-radius: 3px;
     margin:10px auto;
     box-sizing: border-box;
@@ -61,13 +63,21 @@ label{
 
 button{
    
-    padding: 5px;
+    padding: 16px;
     width: 200px;
-    background-color: rgba(114, 117, 119, 0.616);
+    background-color: #7494ec;
     float: left;
     margin-top: 30px;
     margin-left: 120px;
     border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: 500ms ease-in-out;
+}
+
+button:hover{
+  background-color: #4a61a1;
 }
 
 table {
@@ -117,6 +127,7 @@ td:nth-child(2) {
     .btn1 {
       position: relative;
       left: 355px;
+
+
     }
   
-    
