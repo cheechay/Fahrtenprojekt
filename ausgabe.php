@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="ausgabe.css">
 </head>
 <body>
+    <div class="out-wrap">
     <table>
         <thead>
                <th>Name</th>
@@ -63,5 +64,7 @@
                 ?>
             </tbody>
         </table>
+    </div>
+
     </body>
 </html>
