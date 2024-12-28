@@ -32,7 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="container">
-        <h1>Fahrtenbuch - Project</h1>
+        <div class="contheader">
+            <h1>Fahrtenbuch - Project </h1>
+        </div>
         <h4>Bitte die Eingaben einmal überprüfen</h4>
         <table style="padding-left:20px;">
             <tr>

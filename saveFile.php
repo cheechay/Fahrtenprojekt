@@ -67,72 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <head>
     <title>Erfolgreich XML speichert</title>
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px black;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        a {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 40px;
-            color: black;
-            text-align: center;
-            width: 780px;
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: #54565865;
-            border-radius: 10px 10px 0 0;
-
-        }
-
-        fieldset {
-            padding: 20px;
-            border: 2px solid;
-            border-radius: 0 0 10px 10px;
-        }
-
-        legend {
-            font-size: large;
-            font-weight: bold;
-        }
-
-        button {
-            padding: 5px;
-            width: 200px;
-            background-color: rgba(114, 117, 119, 0.616);
-            float: left;
-            margin-top: 30px;
-            margin-left: 120px;
-            border-radius: 5px;
-        }
-
-
-        th {
-            text-align: left;
-        }
-
-        label,
-        p {
-            font-size: 14px;
-            font-weight: bold;
-            vertical-align: middle;
-        }
-
-        .photo {
-            text-align: center;
-
-        }
-    </style>
 </head>
 
 <body>
@@ -141,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <fieldset>
             <legend>Vielen Dank</legend>
             <p style="text-align:center; margin-top:40px;">Die Eingabe ist erfolgreich abgeschlossen.</p>
-            <div class="photo"><img src="smile.jpg" alt="smile" height="45">
+            <div class="photo" style="text-align:center;"><img src="smile.jpg" alt="smile" height="45">
                 <img src="smile.jpg" alt="smile" height="45">
                 <img src="smile.jpg" alt="smile" height="45">
             </div>
