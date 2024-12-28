@@ -80,8 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <legend>Vielen Dank</legend>
             <p style="text-align:center; margin-top:40px;">Die Eingabe ist erfolgreich abgeschlossen.</p>
             <div class="photo" style="text-align:center;"><img src="smile.jpg" alt="smile" height="45">
-                <img src="smile.jpg" alt="smile" height="45">
-                <img src="smile.jpg" alt="smile" height="45">
+
             </div>
             <hr>
             <p>Wie möchten Sie weiter machen?</p>
