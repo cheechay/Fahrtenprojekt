@@ -73,7 +73,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <div class="container">
-        <h1>Fahrtenbuch - Project </h1>
+        <div class="contheader">
+            <h1>Fahrtenbuch - Project </h1>
+        </div>
         <fieldset>
             <legend>Vielen Dank</legend>
             <p style="text-align:center; margin-top:40px;">Die Eingabe ist erfolgreich abgeschlossen.</p>
