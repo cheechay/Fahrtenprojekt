@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 
     // Suche die Fahrt mit der entsprechenden ID
     foreach ($xml->fahrten as $fahrt) {
-        if ((string)$fahrt['id'] === $id) {
+        if ((string) $fahrt['id'] === $id) {
             // Details der Fahrt anzeigen
             echo "<h1>Details für Fahrt-ID: $id</h1>";
             echo "<p>Name: " . $fahrt->name . "</p>";
@@ -19,6 +19,7 @@ if (isset($_GET['id'])) {
             echo "<p>Kilometer Start: " . $fahrt->km_start . "</p>";
             echo "<p>Kilometer Ende: " . $fahrt->km_end . "</p>";
             echo "<p>Kilometer Differenz: " . $fahrt->kmdiff . "</p>";
+
         }
     }
 } else {
