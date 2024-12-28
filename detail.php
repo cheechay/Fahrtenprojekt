@@ -27,6 +27,9 @@ if (isset($_GET['id'])) {
             //$kmdiff = $fahrt->Kmdiff;
             $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'N/A'; // Default-Wert, falls kein Wert vorhanden
             $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : 'N/A'; // Default-Wert, falls kein Wert vorhanden
+            $uhrzeit_von = isset($fahrt->uhrzeit_von) ? $fahrt->uhrzeit_von : 'N/A';
+            $uhrzeit_bis = isset($fahrt->uhrzeit_von) ? $fahrt->uhrzeit_bis : 'N/A';
+
 
         }
     }
