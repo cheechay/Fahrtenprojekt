@@ -14,6 +14,8 @@
                <th>Wohnort</th>
                <th>Zweck</th>
                <th>Datum</th>
+               <th>Uhrzeit Von</th>
+               <th>Uhrzeit bis</th>
                <th>Kilometer Start</th>
                <th>Kilometer Ende</th>
                <th>Kilometer Differenz</th>
@@ -30,41 +32,43 @@
                         $xml = simplexml_load_file('fahrtenbuch.xml') or die("Error: Cannot create object");
 
                         $id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
-
-
+                        $delete_id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
+                        
                         foreach ($xml->fahrten as $fahrt) {
+                            
                             $id = (string)$fahrt['id'];
                             $name = $fahrt->name;
                             $wohnort = $fahrt->wohnort;
                             $zweck = $fahrt->zweck;
                             $datum = $fahrt->datum;
-                            $km_start = $fahrt->km_start;
-                            //$km_end = $fahrt->Km_end;
-                            //$kmdiff = $fahrt->Kmdiff;
+                            $uhrzeit_von = $fahrt->uhrzeit_von;
+                            $uhrzeit_bis = $fahrt->uhrzeit_bis;
+                            $km_start = isset($fahrt->km_start) ? $fahrt->km_start : 'N/A'; // Default-Wert, falls kein Wert vorhanden
                             $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'N/A'; // Default-Wert, falls kein Wert vorhanden
                             $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : 'N/A'; // Default-Wert, falls kein Wert vorhanden
-                            
+                      
                             $tableRow ="
-                                    <tr>
-                                        <td><img  width=\"30px\" height=\"30px\"   src=\"imgs\/user.png\" alt=\"User Bild\">$name </td>
+                                    <tr id=\"entry_<?php echo $id; ?>\">
+                                        <td><img  width=\"30px\" height=\"30px\" src=\"imgs\/user.png\" alt=\"User Bild\">$name </td>
                                         <td>$wohnort</td>
                                         <td>$zweck</td>
                                         <td>$datum</td>
+                                        <td>$uhrzeit_von</td>
+                                        <td>$uhrzeit_bis</td>
                                         <td>$km_start</td>
                                         <td>$km_end</td>
                                         <td>$kmdiff</td>
                                         <td><a href=\"detail.php?id=$id\">Detail</a></td>
+                                     
                                       </tr>
                                 ";
                                 echo $tableRow;
                              
                         }
-
-                    }               
+    }             
                 ?>
-            </tbody>
-        </table>
-    </div>
-
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>

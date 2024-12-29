@@ -1,4 +1,17 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Liste</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
 <?php
+
 // Überprüfen, ob die ID über die URL übergeben wurde
 if (isset($_GET['id'])) {
     $id = $_GET['id']; // ID aus der URL holen
@@ -17,35 +30,20 @@ if (isset($_GET['id'])) {
     // Suche die Fahrt mit der entsprechenden ID
     foreach ($xml->fahrten as $fahrt) {
         if ((string) $fahrt['id'] === $id) {
-            $id = (string) $fahrt['id'];
+            $id = (string)$fahrt['id'];
             $name = $fahrt->name;
             $wohnort = $fahrt->wohnort;
             $zweck = $fahrt->zweck;
             $datum = $fahrt->datum;
-            $km_start = $fahrt->km_start;
-            //$km_end = $fahrt->Km_end;
-            //$kmdiff = $fahrt->Kmdiff;
-            $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'N/A'; // Default-Wert, falls kein Wert vorhanden
-            $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : 'N/A'; // Default-Wert, falls kein Wert vorhanden
-            $uhrzeit_von = isset($fahrt->uhrzeit_von) ? $fahrt->uhrzeit_von : 'N/A';
-            $uhrzeit_bis = isset($fahrt->uhrzeit_von) ? $fahrt->uhrzeit_bis : 'N/A';
-
-
+            $uhrzeit_von = isset($fahrt->uhrzeit_von) ? $fahrt->uhrzeit_von : 'Nicht eingegeben';
+            $uhrzeit_bis = isset($fahrt->uhrzeit_bis) ? $fahrt->uhrzeit_bis : 'Nicht eingegeben';
+            $km_start = $fahrt->km_start ? $fahrt->km_start : 'Nicht eingegeben';;
+            $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'Nicht eingegeben'; // Default-Wert, falls kein Wert vorhanden
+            $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : ''; // Default-Wert, falls kein Wert vorhanden
         }
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ID Liste</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
     <h1>Details für Fahrt-ID:<?php echo htmlspecialchars($id); ?></h1>
     <p>Name: <?php echo htmlspecialchars($name); ?></p>
     <p>
@@ -53,9 +51,11 @@ if (isset($_GET['id'])) {
     </p>
     <p>Zweck: <?php echo htmlspecialchars($zweck); ?></p>
     <p>Datum: <?php echo htmlspecialchars($datum); ?></p>
-    <p>Km Start: <?php echo htmlspecialchars($km_start); ?></p>
+    <p>Uhrzeit von: <?php echo htmlspecialchars($uhrzeit_von); ?></p>
+    <p>Uhrzeit bis: <?php echo htmlspecialchars($uhrzeit_bis); ?></p>
     <p>Km Ende: <?php echo htmlspecialchars($km_end); ?></p>
     <p>Km Diff: <?php echo htmlspecialchars($kmdiff); ?></p>
+
     <?php if ($id == $maxId): ?>
         <form action="editDetailFile.php" method="post">
             <input type="hidden" name="form_type" value="form2">
