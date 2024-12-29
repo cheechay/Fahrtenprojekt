@@ -1,22 +1,26 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $xmlFile = 'fahrtenbuch.xml';
+    $xml = simplexml_load_file($xmlFile);
 
+    // Identify the last entry
+    $totalEntries = count($xml->fahrten);
+    $lastEntry = $xml->fahrten[$totalEntries - 1];
 
-    $datum = $_POST['datum'];
-    $name = $_POST['name']; // $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-    $name = filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
-    $wohnort = filter_input(INPUT_POST, 'wohnort', FILTER_DEFAULT);
-    $zweck = filter_input(INPUT_POST, 'zweck', FILTER_DEFAULT);
-    //$datum = filter_input(INPUT_POST, 'datum', FILTER_DEFAULT);
-    $km_start = filter_input(INPUT_POST, 'km_start', FILTER_DEFAULT);
-    $km_end = filter_input(INPUT_POST, 'km_end', FILTER_DEFAULT);
-    $uhrzeit_von = filter_input(INPUT_POST, 'uhrzeit_von', FILTER_DEFAULT);
-    $uhrzeit_bis = filter_input(INPUT_POST, 'uhrzeit_bis', FILTER_DEFAULT);
-    $kmdiff = filter_input(INPUT_POST, 'kmdiff', FILTER_DEFAULT);
+    $name = $lastEntry->name;
+    $datum = $lastEntry->datum;
+    $wohnort = $lastEntry->wohnort;
+    $zweck = $lastEntry->zweck;
+    $km_start = $lastEntry->km_start;
+    $km_end = $lastEntry->km_end;
+    $kmdiff = $lastEntry->kmdiff;
+    $uhrzeit_von = $lastEntry->uhrzeit_von;
+    $uhrzeit_bis = $lastEntry->uhrzeit_bis;
+    $kmdiff = $km_end - $km_start;
 
-    $kmdiff = (int) $km_end - (int) $km_start;
 
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -35,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="contheader">
             <h1>Fahrtenbuch - Project </h1>
         </div>
-        <form action="index.php" method="post">
+        <form action="newSaveFile.php" method="post">
 
             <!--<h3>Personal Information</h3> -->
             <fieldset>
@@ -45,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <tr>
                         <td><label for="name"> Name</label></td>
                         <td colspan="2"><input type="text" name="name" id="name" size="35"
-                                value="<?php echo htmlspecialchars($name); ?> " required></td>
+                                value="<?php echo (string) $lastEntry->name; ?> " required></td>
                         <td rowspan="3">
                             <img src="map.png" alt="bwm" width="100" height="115">
                             <p><a href="https://www.google.com/maps/" target="_blank">Suchen auf Google map </a></p>
@@ -102,13 +106,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     margin-left:440px;"> Abgeben</button>
                 </div>
 
+
             </fieldset>
         </form>
         <div class="abbrechen">
-            <button type="submit" onclick="window.location.href='index.html';" style="position: relative;
+            <button type="submit" onclick="window.location.href='ausgabe.php';" style="position: relative;
       top: 0.5px;
       left:21px;"> Abbrechen</button>
         </div>
+
     </div>
     <script>
 
