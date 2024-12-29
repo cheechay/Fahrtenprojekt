@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="btn1">
                     <button type="submit" class="btn1" style="position:relative;
-                    margin-left:440px;"> Abgeben</button>
+                    margin-left:-270px;"> Abgeben</button>
                 </div>
 
 
