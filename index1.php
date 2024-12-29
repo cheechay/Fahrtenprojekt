@@ -98,13 +98,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                 <div class="btn1">
-                    <button type="submit"> Abgeben</button>
+                    <button type="submit" class="btn1" style="position:relative;
+                    margin-left:440px;"> Abgeben</button>
                 </div>
 
             </fieldset>
         </form>
         <div class="abbrechen">
-            <button type="submit" onclick="window.location.href='index.html';"> Abbrechen</button>
+            <button type="submit" onclick="window.location.href='index.html';" style="position: relative;
+      top: 0.5px;
+      left:21px;"> Abbrechen</button>
         </div>
     </div>
     <script>
