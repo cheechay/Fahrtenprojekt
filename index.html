@@ -8,17 +8,29 @@
 </head>
 
 <body>
+    <header>
+        <div class="logo"><img src="logo.png" alt="" width="95px ">
+        <h2>Fahrtenbuch</h2></div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Eintrag</a></li>
+                <li><a href="">List</a></li>
+             
+            </ul>
+        </nav>
+    </header>
     
     <div class="container">
 
         <div class="contheader">
-            <h1>Fahrtenbuch - Project </h1>
+            <h1>Eingabe Formular </h1>
         </div>
         <form action="index.php" method="POST">
     
-            <!--<h3>Personal Information</h3> -->
+            
         <fieldset>
-            <legend >Personal Information</legend>
+            <legend >Tragen Sie ein</legend>
 
             <table class="info-section">
                 <tr>
@@ -36,7 +48,7 @@
                 </tr>
                 <tr>
                     <td><label for="zweck">Zweck </label></td>
-                    <td colspan="2"><input type="text" name="zweck" id="zweck" size="35" placeholder="Enter purpose" required></td>
+                    <td colspan="2"><input type="text" name="zweck" id="zweck" size="35"  required></td>
                 </tr>
  
                 <tr>
@@ -45,7 +57,7 @@
                     
                   
                     <td><label for="km_start">Km Start</label></td>
-                    <td><input type="number" name="km_start" id="km_start"></td>
+                    <td><input type="number" name="km_start" id="km_start" min="0"></td>
                 </tr>
                 <tr>
                   
@@ -53,7 +65,7 @@
                     <td> <input type="time" name="uhrzeit_von" id="uhrzeit_von"></td>
                    
                     <td><label for="km_end">Km End</label></td>
-                    <td> <input type="number" name="km_end" id="km_end"></td>
+                    <td> <input type="number" name="km_end" id="km_end" min="0"></td>
                     
                 </tr>
                   <tr>                          
@@ -77,23 +89,10 @@
             </fieldset>
         </form>
     </div>
-    <script>
-    
-        function calculatekmdiff() {
-            const kmStart = parseFloat(document.getElementById('km_start').value) || 0;
-            const kmEnd = parseFloat(document.getElementById('km_end').value) || 0;
-    
-            const kmDiff = kmEnd >= kmStart ? kmEnd - kmStart : "0";
-            document.getElementById('kmdiff').value = kmDiff;
-        }
-    
-        window.onload = function() {
-            document.getElementById('km_start').addEventListener('input', calculatekmdiff);
-            document.getElementById('km_end').addEventListener('input', calculatekmdiff);
-            
-                document.getElementById('kmdiff').value = "";
-            
-        };
-    </script>
+    <footer>
+        <p>&copy;</p>
+    </footer>
+   
+    <script src="script.js"></script>
 </body>
 </html>
