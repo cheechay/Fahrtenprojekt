@@ -1,98 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fahrtenbuch</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
     <header>
         <div class="logo"><img src="logo.png" alt="" width="95px ">
-        <h2>Fahrtenbuch</h2></div>
+            <h2>Fahrtenbuch</h2>
+        </div>
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="index.html">Eintrag</a></li>
                 <li><a href="">List</a></li>
-             
+
             </ul>
         </nav>
     </header>
-    
+
     <div class="container">
 
-        <div class="contheader">
-            <h1>Eingabe Formular </h1>
+        <div style="display: flex; align-items: center; text-align: center; padding:20px;">
+            <i class="fa-regular fa-pen-to-square fa-beat-fade" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.5px solid #000; margin: 0 10px;">
+            <i class="fa-regular fa-circle-question" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
+            <i class="fa-solid fa-pen" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
+            <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px;"></i>
+
         </div>
         <form action="index.php" method="POST">
-    
-            
-        <fieldset>
-            <legend >Tragen Sie ein</legend>
 
-            <table class="info-section">
-                <tr>
-                    <td ><label for="name"> Name</label></td>
-                    <td colspan="2"><input type="text" name="name" id="name" size="35" required></td>
-                    <td  rowspan="3">
-                        <a href="https://www.google.com/maps/" target="_blank" ><img src="map.png" alt="google map" width="100" height="115" ></a>
-                        <p>Suchen auf Google map </p>
-                    </td>
-                   
-                </tr>
-                <tr>
-                    <td><label for="wohnort">Wohnort</label></td>
-                    <td colspan="2"><input type="text" name="wohnort" id="wohnort" size="35" required></td>
-                </tr>
-                <tr>
-                    <td><label for="zweck">Zweck </label></td>
-                    <td colspan="2"><input type="text" name="zweck" id="zweck" size="35"  required></td>
-                </tr>
- 
-                <tr>
-                    <td><label for="datum">Datum </label></td>
-                    <td ><input type="date" name="datum" id="datum"  required></td>
-                    
-                  
-                    <td><label for="km_start">Km Start</label></td>
-                    <td><input type="number" name="km_start" id="km_start" min="0"></td>
-                </tr>
-                <tr>
-                  
-                    <td> <label for="uhrzeit_von">Uhrzeit von</label></td>
-                    <td> <input type="time" name="uhrzeit_von" id="uhrzeit_von"></td>
-                   
-                    <td><label for="km_end">Km End</label></td>
-                    <td> <input type="number" name="km_end" id="km_end" min="0"></td>
-                    
-                </tr>
-                  <tr>                          
-                            <td> <label for="uhrzeit_bis">Uhrzeit bis</label></td>
-                            <td><input type="time" name="uhrzeit_bis" id="uhrzeit_bis"> </td>
-                            
-                            <td><label for="kmdiff">Km Diff</label></td>
-                            <td><input type="text" name="kmdiff" id="kmdiff" size="35" disabled></td>
 
-                        </tr>
-                    </table>
-            
-                    <div class="btn-reset">
-                        <button type="reset"> Zurücksetzen</button>
-                    </div>
-    
-                    <div class="btn-submit">
-                        <button type="submit"> Abgeben</button>
-                    </div>
-               
+            <fieldset>
+                <legend>Tragen Sie ein</legend>
+
+                <table class="info-section">
+                    <tr>
+                        <td><label for="name"> Name</label></td>
+                        <td colspan="2"><input type="text" name="name" id="name" size="35" required></td>
+                        <td rowspan="3">
+                            <a href="https://www.google.com/maps/" target="_blank"><img src="map.png" alt="google map"
+                                    width="100" height="115"></a>
+                            <p>Suchen auf Google map </p>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="wohnort">Wohnort</label></td>
+                        <td colspan="2"><input type="text" name="wohnort" id="wohnort" size="35" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="zweck">Zweck </label></td>
+                        <td colspan="2"><input type="text" name="zweck" id="zweck" size="35" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="datum">Datum </label></td>
+                        <td><input type="date" name="datum" id="datum" required></td>
+
+
+                        <td><label for="km_start">Km Start</label></td>
+                        <td><input type="number" name="km_start" id="km_start" min="0"></td>
+                    </tr>
+                    <tr>
+
+                        <td> <label for="uhrzeit_von">Uhrzeit von</label></td>
+                        <td> <input type="time" name="uhrzeit_von" id="uhrzeit_von"></td>
+
+                        <td><label for="km_end">Km End</label></td>
+                        <td> <input type="number" name="km_end" id="km_end" min="0"></td>
+
+                    </tr>
+                    <tr>
+                        <td> <label for="uhrzeit_bis">Uhrzeit bis</label></td>
+                        <td><input type="time" name="uhrzeit_bis" id="uhrzeit_bis"> </td>
+
+                        <td><label for="kmdiff">Km Diff</label></td>
+                        <td><input type="text" name="kmdiff" id="kmdiff" size="35" disabled></td>
+
+                    </tr>
+                </table>
+
+                <div class="btn-reset">
+                    <button type="reset"> Zurücksetzen <i class="fa-solid fa-rotate-left"></i></button>
+                </div>
+
+                <div class="btn-submit">
+                    <button type="submit"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                </div>
+
             </fieldset>
         </form>
     </div>
     <footer>
         <p>&copy;</p>
     </footer>
-   
+
     <script src="script.js"></script>
 </body>
+
 </html>
