@@ -30,20 +30,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fahrtenbuch Korrektur</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
+    <header>
+        <div class="logo"><img src="logo.png" alt="" width="95px ">
+            <h2>Fahrtenbuch</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Eintrag</a></li>
+                <li><a href="ausgabe.php">List</a></li>
+
+            </ul>
+        </nav>
+    </header>
 
     <div class="container">
 
-        <div class="contheader">
-            <h1>Fahrtenbuch - Project </h1>
-        </div>
         <form action="newSaveFile.php" method="post">
 
             <!--<h3>Personal Information</h3> -->
             <fieldset>
-                <legend>Personal Information</legend>
+                <legend><i class="fa-solid fa-pen"></i> bearbeiten</legend>
 
                 <table class="info-section">
                     <tr>
@@ -103,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="btn1">
                     <button type="submit" class="btn1" style="position:relative;
-                    margin-left:-270px;"> Abgeben</button>
+                    margin-left:-270px;"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
                 </div>
 
 
@@ -112,10 +124,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="abbrechen">
             <button type="submit" onclick="window.location.href='ausgabe.php';" style="position: relative;
       top: 0.5px;
-      left:21px;"> Abbrechen</button>
+      left:21px;"> Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
         </div>
 
     </div>
+    <footer>
+        <p>&copy;</p>
+    </footer>
+
     <script>
 
 
