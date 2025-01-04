@@ -105,7 +105,26 @@
         <p>&copy;</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+
+
+        function calculatekmdiff() {
+            const kmStart = parseFloat(document.getElementById('km_start').value) || 0;
+            const kmEnd = parseFloat(document.getElementById('km_end').value) || 0;
+
+            const kmDiff = kmEnd >= kmStart ? kmEnd - kmStart : "";
+            document.getElementById('kmdiff').value = kmDiff;
+
+        }
+
+        window.onload = function () {
+            document.getElementById('km_start').addEventListener('input', calculatekmdiff);
+            document.getElementById('km_end').addEventListener('input', calculatekmdiff);
+            document.getElementById('kmdiff').value = "<?php echo htmlspecialchars($kmdiff); ?>";
+
+        };
+
+    </script>
 </body>
 
 </html>
