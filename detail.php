@@ -47,6 +47,19 @@
         }
     }
     ?>
+    <header>
+        <div class="logo"><img src="logo.png" alt="" width="95px ">
+            <h2>Fahrtenbuch</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Eintrag</a></li>
+                <li><a href="">List</a></li>
+
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <fieldset>
             <h1 style=" color:black; padding:20px; text-align:center;">Details </h1>
@@ -121,6 +134,9 @@
         </fieldset>
 
     </div>
+    <footer>
+        <p>&copy;</p>
+    </footer>
 </body>
 
 </html>
