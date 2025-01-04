@@ -68,13 +68,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <title>Erfolgreich XML speichert</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
+    <header>
+        <div class="logo"><img src="logo.png" alt="" width="95px ">
+            <h2>Fahrtenbuch</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Eintrag</a></li>
+                <li><a href="">List</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
-        <div class="contheader">
-            <h1>Fahrtenbuch - Project </h1>
+        <div style="display: flex; align-items: center; text-align: center; padding:30px;">
+            <i class="fa-regular fa-pen-to-square" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.5px solid #000; margin: 0 10px;">
+            <i class="fa-regular fa-circle-question" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.5px solid #000; margin: 0 10px;">
+            <i class="fa-solid fa-pen" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
+            <i class="fa-regular fa-circle-check" style="font-size:44px; margin-right: 10px; color:green;"></i>
         </div>
         <fieldset>
             <legend>Vielen Dank</legend>
@@ -86,34 +107,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p>Wie möchten Sie weiter machen?</p>
             <table>
                 <tr>
-                    <td><label for="home">Neuer Eintrag</label></td>
                     <td>
                         <form action="index.html">
-                            <button type="submit" id="home"> Formular</button>
+                            <button type="submit" id="home" style="flex:left; margin-left:-10px;"> Formular <i
+                                    class="fa-regular fa-pen-to-square"></i></button>
                         </form>
                     </td>
-                </tr>
-                <tr>
-                    <td><label for="xml_datei">Als XML-Liste anschauen</label></td>
+
                     <td>
                         <form action="fahrtenbuch.xml">
-                            <button type="submit" id="xml_datei"> XML Datei</button>
+                            <button type="submit" id="xml_datei" style="margin-left:40px; "> XML Datei <i
+                                    class="fa-regular fa-file-code"></i> </button>
                         </form>
                     </td>
-                </tr>
-                <tr>
-                    <td><label for="liste">Alle Fahrten listen anschauen</label></td>
                     <td>
                         <form action="ausgabe.php">
-                            <button class='button' role="button" id="button">Fahrtenbuch</button>
+                            <button class='button' role="button" id="button"
+                                style="flex:right; margin-left:-10px;">Fahrtenbuch <i
+                                    class="fa-solid fa-book"></i></button>
                         </form>
                     </td>
                 </tr>
             </table>
         </fieldset>
     </div>
+    <footer style="">
+        <p>&copy;</p>
+    </footer>
+
 </body>
 
 </html>
 
-​‌‌‍⁡⁣⁣⁢
+​‌‌‍
