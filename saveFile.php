@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="index.html">Eintrag</a></li>
-                <li><a href="">List</a></li>
+                <li><a href="ausgabe.php">List</a></li>
 
             </ul>
         </nav>
