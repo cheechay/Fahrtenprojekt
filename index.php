@@ -26,16 +26,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <title>Eingabe Kontrolle</title>
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+    <header>
+        <div class="logo"><img src="logo.png" alt="" width="95px ">
+            <h2>Fahrtenbuch</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Eintrag</a></li>
+                <li><a href="">List</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
 
     <div class="container">
-        <div class="contheader">
-            <h1>Fahrtenbuch - Project </h1>
+
+        <div style="display: flex; align-items: center; text-align: center;padding:20px;">
+            <i class="fa-regular fa-pen-to-square" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.5px solid #000; margin: 0 10px;">
+            <i class="fa-regular fa-circle-question fa-beat-fade" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
+            <i class="fa-solid fa-pen" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
+            <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px;"></i>
         </div>
-        <h4>Bitte die Eingaben einmal überprüfen</h4>
+        <h4>Bitte die Eingaben überprüfen</h4>
         <table style="padding-left:20px;">
             <tr>
                 <th style="text-align:left;">Name:</th>
@@ -74,8 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td><?php echo htmlspecialchars($kmdiff); ?></td>
             </tr>
             <tr>
-                <td><label for="edit">Bearbeiten</label></td>
-                <td>
+                <td style="flex:left;">
                     <!-- Form to redirect with current data as query parameters -->
                     <form action="index1.php" method="post">
                         <input type="hidden" name="form_type" value="form1">
@@ -87,13 +107,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="hidden" name="uhrzeit_bis" value="<?php echo htmlspecialchars($uhrzeit_bis); ?>">
                         <input type="hidden" name="km_start" value="<?php echo htmlspecialchars($km_start); ?>">
                         <input type="hidden" name="km_end" value="<?php echo htmlspecialchars($km_end); ?>">
-                        <button type="submit" id="edit">Formular Bearbeiten</button>
+                        <button type="submit" id="edit">Formular Bearbeiten <i
+                                class="fa-regular fa-pen-to-square"></i></button>
                     </form>
                 </td>
-            </tr>
-            <tr>
-                <td><label for="next">Weiter</label></td>
-                <td>
+                <td style="flex:right;">
                     <!-- Form to save data -->
                     <form action="saveFile.php" method="post">
                         <input type="hidden" name="name" value="<?php echo htmlspecialchars($name); ?>">
@@ -104,14 +122,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="hidden" name="uhrzeit_bis" value="<?php echo htmlspecialchars($uhrzeit_bis); ?>">
                         <input type="hidden" name="km_start" value="<?php echo htmlspecialchars($km_start); ?>">
                         <input type="hidden" name="km_end" value="<?php echo htmlspecialchars($km_end); ?>">
-                        <button type="submit" id="next">Speichern</button>
+                        <button type="submit" id="next">Speichern <i class="fa-solid fa-floppy-disk"></i></button>
                     </form>
                 </td>
             </tr>
         </table>
     </div>
+    <footer>
+        <p>&copy;</p>
+    </footer>
 
     </div>
+
 </body>
 
 </html>
