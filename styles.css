@@ -176,6 +176,10 @@ margin-right: auto;
     color: white;
     text-align: center;
     padding: 20px 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
  
 footer p {
