@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <!--<h3>Personal Information</h3> -->
             <fieldset>
-                <legend>Personal Information</legend>
+            <legend><i class="fa-solid fa-pen"></i> Bearbeiten</legend>
 
                 <table class="info-section">
                     <tr>
