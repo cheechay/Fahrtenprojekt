@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="de">
 
 <head>
-    <title>Erfolgreich XML speichert</title>
+    <title>Erfolgreich speichert</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <legend>Vielen Dank</legend>
             <p style="text-align:center; margin-top:40px;">Die Eingabe ist erfolgreich abgeschlossen.</p>
             <div class="photo" style="text-align:center;">
-            <video  alt="smile" height="55" autoplay><source src="clap.mp4" type="video/mp4"></video>
+            <video  alt="applause" height="55" autoplay><source src="clap.mp4" type="video/mp4"></video>
             </div>
             <hr>
             <p>Wie möchten Sie weiter machen?</p>
