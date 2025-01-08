@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <header>
-        <div class="logo"><img src="logo.png" alt="" width="95px ">
+    <div class="logo"><img src="logo.png" alt="" width="95px ">
             <h2>Fahrtenbuch</h2>
         </div>
         <nav>
@@ -100,8 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <fieldset>
             <legend>Vielen Dank</legend>
             <p style="text-align:center; margin-top:40px;">Die Eingabe ist erfolgreich abgeschlossen.</p>
-            <div class="photo" style="text-align:center;"><img src="smile.jpg" alt="smile" height="45">
-
+            <div class="photo" style="text-align:center;">
+            <video  alt="smile" height="55" autoplay><source src="clap.mp4" type="video/mp4"></video>
             </div>
             <hr>
             <p>Wie möchten Sie weiter machen?</p>
@@ -116,27 +116,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <td>
                         <form action="fahrtenbuch.xml">
-                            <button type="submit" id="xml_datei" style="margin-left:40px; "> XML Datei <i
-                                    class="fa-regular fa-file-code"></i> </button>
+                            <button type="submit" id="xml_datei" style="margin-left:40px; "> XML Datei 
+                                <i class="fa-regular fa-file-code"></i> </button>
                         </form>
                     </td>
+
                     <td>
                         <form action="ausgabe.php">
                             <button class='button' role="button" id="button"
-                                style="flex:right; margin-left:-10px;">Fahrtenbuch <i
-                                    class="fa-solid fa-book"></i></button>
+                                style="flex:right; margin-left:-10px;">Fahrtenbuch 
+                                <i class="fa-solid fa-book"></i></button>
                         </form>
                     </td>
                 </tr>
             </table>
         </fieldset>
     </div>
-    <footer style="">
+    <footer>
         <p>&copy;</p>
     </footer>
-
 </body>
-
 </html>
 
 ​‌‌‍
