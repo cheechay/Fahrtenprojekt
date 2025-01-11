@@ -111,14 +111,20 @@ td{
     color: #000;
 }
 
-a{
+.detail,
+.delete{
+    width: 60px;
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: #fff;
     padding: 0.5rem;
     border-radius: 5px;
-    background-color: #7494ec;
+    margin: 0;
+    background-color:  #ff8a00;
 }
 
 a:hover{
-    background-color: #637ec7;
-}
+    color: #fff;
+    background-color: #3659b9;
+  }
