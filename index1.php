@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahrtenbuch Korrektur</title>
+    <title>Eingabe Korrektur</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <!--<h3>Personal Information</h3> -->
             <fieldset>
-                <legend>Personal Information</legend>
+            <legend><i class="fa-solid fa-pen"></i> Bearbeiten</legend>
 
                 <table class="info-section">
                     <tr>

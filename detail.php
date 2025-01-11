@@ -125,7 +125,7 @@
             <?php else: ?>
                 <form action="ausgabe.php" method="get">
 
-                    <button style="display:block; margin:auto;">Schließen <i
+                    <button style="display:block; margin:auto;margin-left:280px ">Schließen <i
                             class="fa-regular fa-circle-xmark"></i></button>
                 </form>
             <?php endif; ?>
