@@ -8,25 +8,70 @@ body{
     align-items: center;
     box-sizing: border-box;
 }
+
+header {
+    background-color:#7494ec;
+    color: white;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+    width: 100%;
+  }
+  
+
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: border 0.3s linear;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 7px;
+    
+  }
+  
+  header nav ul li a:hover {
+  
+    border: 1px solid #fff;
+   
+  }
 .out-wrap{
     position: relative;
-    width: 85%;
+    width: 95%;
     margin: 0 auto;
     height: max-content;
     position: relative;
-    overflow: hidden;
-    position: relative;
-   border-radius: 30px;
+ 
 }
 
+.out-wrap p{
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
 
 table{
     width: 100%;
-    position: sticky;
-    border-collapse: collapse;
     background-color: #fff;
     color: #fff;
     position: relative;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 thead{

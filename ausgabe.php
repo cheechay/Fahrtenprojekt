@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="ausgabe.css">
 </head>
 <body>
+    <header>
+        <div class="logo"><img src="logo.png" alt="" width="95px ">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Eintrag</a></li>
+                <li><a href="ausgabe.php">List</a></li>
+             
+            </ul>
+        </nav>
+    </header>
     <div class="out-wrap">
     <table>
         <thead>
@@ -30,7 +41,7 @@
                         
                         $xmlFile = 'fahrtenbuch.xml';
                     
-                        $xml = simplexml_load_file('fahrtenbuch.xml') or die("Error: Cannot create object");
+                        $xml = simplexml_load_file('fahrtenbuch.xml') or die("<p>Es gibt keine eingetragene Fahrtenbuch</p>");
 
                         $id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
                         $delete_id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
@@ -44,10 +55,10 @@
                         if (isset($_GET['delete_id'])) {
                             $delete_id = $_GET['delete_id'];
     
-                            // Durchlaufe das Array und finde den entsprechenden Eintrag
+                            
                             foreach ($fahrtenArray as $key => $fahrt) {
                                 if ($fahrt['id'] == $delete_id) {
-                                    unset($fahrtenArray[$key]); // Lösche den Eintrag
+                                    unset($fahrtenArray[$key]); 
                                     break;
                                 }
                             }
@@ -86,9 +97,9 @@
                             $datum = $fahrt->datum;
                             $uhrzeit_von = $fahrt->uhrzeit_von;
                             $uhrzeit_bis = $fahrt->uhrzeit_bis;
-                            $km_start = isset($fahrt->km_start) ? $fahrt->km_start : 'N/A'; // Default-Wert, falls kein Wert vorhanden
-                            $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'N/A'; // Default-Wert, falls kein Wert vorhanden
-                            $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : 'N/A'; // Default-Wert, falls kein Wert vorhanden
+                            $km_start = isset($fahrt->km_start) ? $fahrt->km_start : 'nicht gegeben'; // Default-Wert, falls kein Wert vorhanden
+                            $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'nicht gegeben'; // Default-Wert, falls kein Wert vorhanden
+                            $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : 'nicht gegeben'; // Default-Wert, falls kein Wert vorhanden
                       
                             $tableRow ="
                                     <tr id=\"entry_<?php echo $id; ?>\">
@@ -103,7 +114,7 @@
                                         <td>$kmdiff</td>
                                         <td><a href=\"detail.php?id=$id\">Detail</a></td>
                                         <td>
-                                            <a href='?delete_id=$id' class='btn-delete' onclick='return confirm(\"Möchten Sie diesen Eintrag wirklich löschen?\")'>Delete</a>
+                                            <a href='?delete_id=$id' class='btn-delete' onclick='return'>Delete</a>
                                         </td>
                                       </tr>
                                 ";
@@ -115,5 +126,9 @@
                 </tbody>
             </table>
         </div>
+
+    <footer>
+        <p>&copy;</p>
+    </footer>
     </body>
 </html>

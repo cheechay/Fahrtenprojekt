@@ -1,10 +1,14 @@
 
 body{
-  font-family: Poppins, Helvetica, sans-serif;
+  font-family: "Gill Sans", sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 header {
@@ -12,13 +16,13 @@ header {
   color: white;
   padding: 5px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 1000;
   height: 90px;
-
+  width: 100%;
 }
 
 header .logo {
@@ -34,14 +38,19 @@ header nav ul {
 
 header nav ul li a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  transition: border 0.3s linear;
   font-size: 20px;
+  padding: 10px;
+  border-radius: 7px;
+  
 }
 
 header nav ul li a:hover {
-  color: #ff8a00;
+
+  border: 1px solid #fff;
+ 
 }
 
 
@@ -115,11 +124,12 @@ button{
   cursor: pointer;
   border: none;
   transition: 500ms ease-in-out;
- font-weight: bold;
+  font-weight: bold;
 }
 
 button:hover{
-background-color: #4a61a1;
+  color: #fff;
+background-color: #3659b9;
 }
 
 table {
@@ -184,4 +194,52 @@ margin-right: auto;
  
 footer p {
     font-size: 0.9rem;
+}
+
+
+.main_container{
+  width: 400px;
+  height: 400px;
+ 
+}
+
+.main_container svg{
+    width: 100%;
+    height: 100%;
+}
+
+#Pfad_28{
+  transform: translate(275.275px, 486.252px);
+  animation: logo_up 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+#Pfad_30{
+  transform: translate(314.638px, 514.258px);
+  animation: logo_down 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+@keyframes logo_up{
+  0% {transform: translate(275.275px, 0px);}
+  50% {
+  
+  
+  }
+  100% {
+    transform:  translate(275.275px, 486.252px);
+  }
+
+}
+
+
+@keyframes logo_down{
+  0% {transform: translate(314.638px, 845.258px);}
+  50% {
+   
+  }
+  100% {
+    transform: translate(314.638px, 514.258px);
+  }
+
 }
