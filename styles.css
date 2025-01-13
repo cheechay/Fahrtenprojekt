@@ -3,7 +3,7 @@ body{
   font-family: "Gill Sans", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+  background: url(/imgs/);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,8 +70,8 @@ h1{
   font-size: 40px;
   color: #fff;
 }
-.container
-{
+.container{
+  width: 100%;
   max-width: 800px;
   margin: 30px auto;
   padding: 20px;
@@ -111,14 +111,12 @@ label{
   vertical-align: middle;
 }
 
- button{
- 
+button{
   padding: 16px;
   width: 200px;
   background-color:  #ff8a00;
   float: left;
   margin-top: 30px;
-  margin-left: 120px;
   border-radius: 5px;
   color: #000000;
   cursor: pointer;
@@ -169,16 +167,11 @@ margin-right: auto;
 
 }
 
-  .abbrechen {
-    position: relative;
-    top: -100px;
-  }
 
-  .btn1 {
-    position: relative;
-    left: 355px;
-
-
+  .btn_container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
   }
 
   footer {

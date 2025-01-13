@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letzte Eingabe Korrektur</title>
+    <title>Fahrtenbuch Korrektur</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <!--<h3>Personal Information</h3> -->
             <fieldset>
-                <legend><i class="fa-solid fa-pen"></i> Bearbeiten</legend>
+                <legend><i class="fa-solid fa-pen"></i> bearbeiten</legend>
 
                 <table class="info-section">
                     <tr>
@@ -113,19 +113,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </table>
 
 
-                <div class="btn1">
-                    <button type="submit" class="btn1" style="position:relative;
-                    margin-left:-270px;"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                <div class="btn_container">
+                    <button type="submit"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                            <div >
+                    <button class="abbrechen" type="submit" onclick="window.location.href='ausgabe.php';">Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
+                </div>
                 </div>
 
 
             </fieldset>
         </form>
-        <div class="abbrechen">
-            <button type="submit" onclick="window.location.href='ausgabe.php';" style="position: relative;
-      top: 0.5px;
-      left:21px;"> Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
-        </div>
+
 
     </div>
     <footer>

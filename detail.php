@@ -113,21 +113,25 @@
                     <input type="hidden" name="zweck" value="<?php echo htmlspecialchars($zweck); ?>">
                     <input type="hidden" name="km_start" value="<?php echo htmlspecialchars($km_start); ?>">
                     <input type="hidden" name="km_end" value="<?php echo htmlspecialchars($km_end); ?>">
-                    <button type="submit" style="display:block; margin:auto; margin-left:120px;">Bearbeiten <i
+                    <button type="submit" style="float: left;">Bearbeiten <i
                             class="fa-solid fa-pen"></i></button>
                 </form>
+                
                 <form action="ausgabe.php" method="get">
 
-                    <button style="display:block; margin:auto; margin-left:120px;">Schließen <i
+                    <button style="float: right;">Schließen <i
                             class="fa-regular fa-circle-xmark"></i></button>
                 </form>
 
             <?php else: ?>
-                <form action="ausgabe.php" method="get">
 
-                    <button style="display:block; margin:auto;margin-left:280px ">Schließen <i
-                            class="fa-regular fa-circle-xmark"></i></button>
+            <div class="btn_container">
+                <form action="ausgabe.php" method="get">        
+                    <button>Schließen <i class="fa-regular fa-circle-xmark"></i></button>
                 </form>
+            </div>
+             
+
             <?php endif; ?>
 
 

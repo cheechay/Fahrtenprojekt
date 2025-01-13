@@ -60,12 +60,12 @@
                         // Durchlaufe das Array und finde den entsprechenden Eintrag
                         foreach ($fahrtenArray as $key => $fahrt) {
                             if ($fahrt['id'] == $delete_id) {
-                                unset($fahrtenArray[$key]); // Lösche den Eintrag
+                                unset($fahrtenArray[$key]);
                                 break;
                             }
                         }
 
-                        // Schreibe die geänderte XML-Datei zurück
+                       
                         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><fahrtenbuch></fahrtenbuch>'); // Leere XML-Struktur
                         foreach ($fahrtenArray as $fahrt) {
                             $fahrten = $xml->addChild('fahrten');
@@ -123,6 +123,7 @@
                                         <td>$km_start</td>
                                         <td>$km_end</td>
                                         <td>$kmdiff</td>
+                                        
                                         <td><a class=\"detail\" href=\"detail.php?id=$id\">Detail</a></td>
                                         <td>
                                             <a class=\"delete\" href='?delete_id=$id' class='btn-delete' onclick='return confirm(\"Möchten Sie diesen Eintrag wirklich löschen?\")'>Delete</a>

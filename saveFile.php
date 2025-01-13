@@ -106,25 +106,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <hr>
             <p>Wie möchten Sie weiter machen?</p>
             <table>
-                <tr>
-                    <td>
+                <tr class="btn_container" style="width: 100%;">
+                    <td style="width: 30%;">
                         <form action="index.html">
-                            <button type="submit" id="home" style="flex:left; margin-left:-10px;"> Formular <i
+                            <button type="submit" id="home"> Formular <i
                                     class="fa-regular fa-pen-to-square"></i></button>
                         </form>
                     </td>
 
-                    <td>
+                    <td style="width: 30%;">
                         <form action="fahrtenbuch.xml">
-                            <button type="submit" id="xml_datei" style="margin-left:40px; "> XML Datei 
+                            <button type="submit" id="xml_datei"> XML Datei 
                                 <i class="fa-regular fa-file-code"></i> </button>
                         </form>
                     </td>
 
-                    <td>
+                    <td style="width: 30%;">
                         <form action="ausgabe.php">
                             <button class='button' role="button" id="button"
-                                style="flex:right; margin-left:-10px;">Fahrtenbuch 
+                                style="flex:right;">Fahrtenbuch 
                                 <i class="fa-solid fa-book"></i></button>
                         </form>
                     </td>

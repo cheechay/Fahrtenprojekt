@@ -119,20 +119,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     </tr>
                 </table>
-
-
-                <div class="btn1">
-                    <button type="submit" class="btn1" style="position:relative;
-                    margin-left:-270px;"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                <div class="btn_container">
+                    <button type="submit" class=""> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                    <button class="abbrechen" type="submit" onclick="window.location.href='index.html';">Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
                 </div>
-
+                    
+                
             </fieldset>
         </form>
-        <div class="abbrechen">
-            <button type="submit" onclick="window.location.href='index.html';" style="position: relative;
-      top: 0.5px;
-      left:21px;"> Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
-        </div>
+            
+  
     </div>
     <footer>
         <p>&copy;</p>
@@ -149,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             document.getElementById('kmdiff').value = kmDiff;
 
         }
-
+        
         window.onload = function () {
             document.getElementById('km_start').addEventListener('input', calculatekmdiff);
             document.getElementById('km_end').addEventListener('input', calculatekmdiff);
