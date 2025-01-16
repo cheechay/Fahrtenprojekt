@@ -25,10 +25,6 @@ header {
   width: 100%;
 }
 
-header .logo {
-  font-size: 40px;
-  font-weight: bold;
-}
 
 header nav ul {
   list-style: none;
@@ -236,3 +232,38 @@ footer p {
   }
 
 }
+
+.animation img{
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1000px;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.text img{
+  position: absolute;
+  transform: translate(-50,-50%);
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.car img{
+  position: absolute;
+  transform: translate(-50,-50%);
+  top: 20%;
+  right: 0;
+  z-index: 2;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
