@@ -23,7 +23,7 @@ header {
     width: 100%;
   }
   
-
+  
   header nav ul {
     list-style: none;
     display: flex;
@@ -44,7 +44,17 @@ header {
   header nav ul li a:hover {
   
     border: 1px solid #fff;
-   
+    background-color:#7494ec;
+  }
+  
+  .contheader {
+    text-align: center;
+    width: 780px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color:#7494ec;
+    border-radius: 10px 10px 0 0;
+  
   }
 .out-wrap{
     position: relative;
@@ -128,3 +138,86 @@ a:hover{
     color: #fff;
     background-color: #3659b9;
   } 
+
+  .main_container{
+    width: 90px;
+    height: 90px;
+   
+  }
+  
+  .main_container svg{
+      width: 100%;
+      height: 100%;
+  }
+  
+  #Pfad_28{
+    transform: translate(275.275px, 486.252px);
+    animation: logo_up 1.5s ease-in-out;
+    transition: 1.5s ease-in-out;
+  }
+  
+  #Pfad_30{
+    transform: translate(314.638px, 514.258px);
+    animation: logo_down 1.5s ease-in-out;
+    transition: 1.5s ease-in-out;
+  }
+  
+  @keyframes logo_up{
+    0% {transform: translate(275.275px, 0px);}
+    50% {
+    
+    
+    }
+    100% {
+      transform:  translate(275.275px, 486.252px);
+    }
+  
+  }
+  
+  
+  @keyframes logo_down{
+    0% {transform: translate(314.638px, 845.258px);}
+    50% {
+     
+    }
+    100% {
+      transform: translate(314.638px, 514.258px);
+    }
+  
+  }
+  
+  .animation img{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .text img{
+    position: absolute;
+    transform: translate(-50,-50%);
+    top: 10%;
+    left: 5%;
+    z-index: 2;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .car img{
+    position: absolute;
+    transform: translate(-50,-50%);
+    top: 20%;
+    right: 0;
+    z-index: 2;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  
