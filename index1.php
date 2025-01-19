@@ -63,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <i class="fa-regular fa-circle-question" style="font-size: 24px; margin-right: 10px;"></i>
             <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
             <i class="fa-solid fa-pen fa-beat-fade" style="font-size: 24px; margin-left: 10px;"></i>
-            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
-            <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border-top: 2px solid rgba(0, 0, 0, 0.2);  margin: 0 10px;">
+            <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px; color: rgba(0, 0, 0, 0.2);"></i>
 
         </div>
 
@@ -129,9 +129,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </tr>
                 </table>
                 <div class="btn_container">
-                    <button type="submit" class=""> Abgeben <i class="fa-regular fa-circle-right"></i></button>
-                    <button class="abbrechen" type="submit" onclick="window.location.href='index.html';">Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
-                </div>
+                   <button class="abbrechen" type="submit" onclick="window.location.href='index.html';">Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
+
+                    <button type="submit" onclick="return testEingabe()"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                                   </div>
                     
                 
             </fieldset>
@@ -144,6 +145,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </footer>
 
     <script>
+       function testEingabe(){
+            const kmStart = parseFloat(document.getElementById('km_start').value) || 0;
+            const kmEnd = parseFloat(document.getElementById('km_end').value) || 0;
+            const uhrzeit_von= parseFloat(document.getElementById('uhrzeit_von').value) || 0;
+            const uhrzeit_bis= parseFloat(document.getElementById('uhrzeit_bis').value) || 0;
+
+
+            
+            if (uhrzeit_von >= uhrzeit_bis && kmStart >= kmEnd)
+            {
+               alert('Bitte, Eingaben überprüfen☹️ !!')
+               return false;
+            }  
+            if(kmStart>=kmEnd){
+             alert('Km End stimmt nicht☹️ !!')
+              return false;
+             }
+            if(uhrzeit_von>= uhrzeit_bis)
+               {
+                 alert('Uhrzeit bis stimmt nicht☹️ !!')
+                 return false;
+               }
+
+           }
+
 
 
         function calculatekmdiff() {
