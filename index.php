@@ -61,10 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <i class="fa-regular fa-pen-to-square" style="font-size: 24px; margin-right: 10px;"></i>
             <hr style="flex: 1; border: 0.5px solid #000; margin: 0 10px;">
             <i class="fa-regular fa-circle-question fa-beat-fade" style="font-size: 24px; margin-right: 10px;"></i>
-            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
-            <i class="fa-solid fa-pen" style="font-size: 24px; margin-right: 10px;"></i>
-            <hr style="flex: 1; border: 0.1px solid #000; margin: 0 10px;">
-            <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px;"></i>
+            <hr style="flex: 1; border-top: 2px solid rgba(0, 0, 0, 0.2); margin: 0 10px;">
+            <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px; color: rgba(0, 0, 0, 0.2);"></i>
         </div>
         <h4>Bitte die Eingaben überprüfen</h4>
         <table style="padding-left:20px;">
