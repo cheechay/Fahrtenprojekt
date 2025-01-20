@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 value="<?php echo htmlspecialchars($uhrzeit_von); ?>" required></td>
 
                         <td><label for="km_end">Km End</label></td>
-                        <td> <input type="number" name="km_end" id="km_end"
+                        <td> <input type="number" name="km_end" min="0" id="km_end"
                                 value="<?php echo htmlspecialchars($km_end); ?>" required></td>
 
                     </tr>
