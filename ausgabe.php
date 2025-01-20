@@ -74,7 +74,6 @@
                             }
                         }
 
-                       
                         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><fahrtenbuch></fahrtenbuch>'); // Leere XML-Struktur
                         foreach ($fahrtenArray as $fahrt) {
                             $fahrten = $xml->addChild('fahrten');

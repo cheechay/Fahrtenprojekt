@@ -158,13 +158,19 @@ Die eingegebenen Daten werden im Backend verarbeitet und in einer XML-Datei gesp
 
 ---*** Quelles: ***---: 
 
-***ChatGPT***, https://www.php.net/manual/en/simplexml.examples-basic.php
+***ChatGPT***, https://www.php.net/manual/en/simplexml.examples-basic.php,  
 
 # Screenshots:
+
+https://www.php.net/manual/en/simplexml.examples-basic.php
 
 ![alt text](image.png) - > (cmd+click);
 
 ![alt text](image-1.png) - > (cmd+click);
+
+https://www.w3schools.com/php/php_xml_simplexml_read.asp
+
+ ![alt text](image-2.png)
 
 # Chat GPT:
 
@@ -174,10 +180,13 @@ Die eingegebenen Daten werden im Backend verarbeitet und in einer XML-Datei gesp
 
 1. Tabelle von Daten in xml - > syntax, beispiel für einen fahrtenbuch
 
-2. Verwende eine foreach-Schleife, um das Array zu durchlaufen und für jedes Element einen neuen Eintrag in
+2. Get daten um das zu ergzeugen in xml
+
+3. Verwende eine foreach-Schleife, um das Array zu durchlaufen und für jedes Element einen neuen Eintrag in
  der XML-Datei zu erstellen.
 
-3. Speichere die XML-Datei nach dem Hinzufügen der neuen Einträge.
+4. Speichere die XML-Datei nach dem Hinzufügen der neuen Einträge.
+
 
 "Schreibe ein PHP-Skript, das zwei Aufgaben erledigt:
 
@@ -186,6 +195,8 @@ Die eingegebenen Daten werden im Backend verarbeitet und in einer XML-Datei gesp
 2. Löschen von Fahrten: Wenn der Benutzer die ID eingibt, löscht das Skript die entsprechende Fahrt aus der XML-Datei, basierend auf dieser ID.
 
  -->
+
+ ----------------QUELL CODE in von CHAT-GPT------------------------------------------------------------------
 
 ```php
 
@@ -206,11 +217,10 @@ foreach ($xml->entry as $entry) {
 
 echo "</table>";
 
-
+//jede erstellte Ausgabe-Fahrten haben id, damit wir mit diesen id-s zugreifen können -> entweder löschen oder bearbeiten;
 
 $id = isset($fahrt['id']) ? $fahrt['id'] : '';
-$delete_id = isset($fahrt['id']) ? $fahrt['id'] : ''; //jede erstellte Ausgabe-Fahrten haben id, damit wir mit diesen id-s zugreifen können -> entweder löschen oder bearbeiten;
-
+$delete_id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
 
 foreach ($xml->fahrten as $key => $fahrt) {
     // Überprüfe, ob das 'id'-Attribut der ID entspricht
@@ -235,8 +245,6 @@ foreach ($xml->fahrten as $key => $fahrt) {
   </fahrten>
 </fahrtenbuch>
 
-
-
-
-
 ```
+
+
