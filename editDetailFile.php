@@ -122,14 +122,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </table>
 
 
-                <div class="btn_container">
-                    <button class="abbrechen" type="submit" onclick="window.location.href='ausgabe.php';" style="margin-left:50px;">Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
+               <div class="btn_container">
+                    <button class="abbrechen" type="submit" onclick="window.location.href='ausgabe.php';" style="margin-left:-10px;">Abbrechen <i class="fa-       regular fa-circle-xmark"></i></button>
 
                                                 <div >
-                    <button type="submit" style="margin-left:-10px;"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                    <button type="submit" style="margin-left:50px;"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
 
                 </div>
                 </div>
+
 
 
             </fieldset>
