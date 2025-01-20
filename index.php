@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px; color: rgba(0, 0, 0, 0.2);"></i>
         </div>
         <h4>Bitte die Eingaben überprüfen</h4>
-        <table style="padding-left:20px;">
+        <table style="padding-left:40px;">
             <tr>
                 <th style="text-align:left;">Name:</th>
                 <td><?php echo htmlspecialchars($name); ?></td>
