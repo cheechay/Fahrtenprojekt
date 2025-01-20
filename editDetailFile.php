@@ -123,10 +123,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                <div class="btn_container">
-                    <button class="abbrechen" type="submit" onclick="window.location.href='ausgabe.php';" style="margin-left:-10px;">Abbrechen <i class="fa-       regular fa-circle-xmark"></i></button>
+                    <button class="abbrechen" type="submit" onclick="window.location.href='ausgabe.php';" style="margin-left:-10px;">Abbrechen 
+                   <i class="fa-regular fa-circle-xmark"></i></button>
 
                                                 <div >
-                    <button type="submit" style="margin-left:50px;"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                    <button type="submit" style="margin-left:50px;" onclick="return testEingabe()"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
 
                 </div>
                 </div>
@@ -143,6 +144,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </footer>
 
     <script>
+       function testEingabe(){
+            const kmStart = parseFloat(document.getElementById('km_start').value) || 0;
+            const kmEnd = parseFloat(document.getElementById('km_end').value) || 0;
+            const uhrzeit_von= parseFloat(document.getElementById('uhrzeit_von').value) || 0;
+            const uhrzeit_bis= parseFloat(document.getElementById('uhrzeit_bis').value) || 0;
+
+
+            
+            if (uhrzeit_von >= uhrzeit_bis && kmStart >= kmEnd)
+            {
+               alert('Bitte, Eingaben überprüfen☹️ !!')
+               return false;
+            }  
+            if(kmStart>=kmEnd){
+             alert('Km End stimmt nicht☹️ !!')
+              return false;
+             }
+            if(uhrzeit_von>= uhrzeit_bis)
+               {
+                 alert('Uhrzeit bis stimmt nicht☹️ !!')
+                 return false;
+               }
+
+           }
 
 
         function calculatekmdiff() {
