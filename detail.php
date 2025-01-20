@@ -123,13 +123,13 @@
                     <input type="hidden" name="zweck" value="<?php echo htmlspecialchars($zweck); ?>">
                     <input type="hidden" name="km_start" value="<?php echo htmlspecialchars($km_start); ?>">
                     <input type="hidden" name="km_end" value="<?php echo htmlspecialchars($km_end); ?>">
-                    <button type="submit" style="float: left;">Bearbeiten <i
+                    <button type="submit" style="margin-left:160px;">Bearbeiten <i
                             class="fa-solid fa-pen"></i></button>
                 </form>
                 
                 <form action="ausgabe.php" method="get">
 
-                    <button style="float: right;">Schließen <i
+                    <button style="margin-left:70px;">Schließen <i
                             class="fa-regular fa-circle-xmark"></i></button>
                 </form>
 
