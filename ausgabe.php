@@ -33,17 +33,12 @@
         </nav>
     </header>
 
-    <div class="out-wrap">
+    <form class="out-wrap">
         <table>
             <thead>
                 <th>Name</th>
                 <th>Wohnort</th>
                 <th>Zweck</th>
-                <th>Datum</th>
-                <th>Uhrzeit Von</th>
-                <th>Uhrzeit bis</th>
-                <th>Kilometer Start</th>
-                <th>Kilometer Ende</th>
                 <th>Kilometer Differenz</th>
                 <th>Details</th>
                 <th>Aktion</th>
@@ -52,6 +47,7 @@
             <tbody>
 
                 <?php
+
                 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
                     $xmlFile = 'fahrtenbuch.xml';
@@ -70,6 +66,7 @@
                         $delete_id = $_GET['delete_id'];
 
                         // Durchlaufe das Array und finde den entsprechenden Eintrag
+
                         foreach ($fahrtenArray as $key => $fahrt) {
                             if ($fahrt['id'] == $delete_id) {
                                 unset($fahrtenArray[$key]);
@@ -85,11 +82,6 @@
                             $fahrten->addChild('name', (string) $fahrt->name);
                             $fahrten->addChild('wohnort', (string) $fahrt->wohnort);
                             $fahrten->addChild('zweck', (string) $fahrt->zweck);
-                            $fahrten->addChild('datum', (string) $fahrt->datum);
-                            $fahrten->addChild('uhrzeit_vom', (string) $fahrt->uhrzeit_von);
-                            $fahrten->addChild('uhrzeit_bis', (string) $fahrt->uhrzeit_bis);
-                            $fahrten->addChild('km_start', (string) $fahrt->km_start);
-                            $fahrten->addChild('km_end', (string) $fahrt->km_end);
                             $fahrten->addChild('kmdiff', (string) $fahrt->kmdiff);
                         }
 
@@ -120,20 +112,15 @@
                         $datum = $fahrt->datum;
                         $uhrzeit_von = $fahrt->uhrzeit_von;
                         $uhrzeit_bis = $fahrt->uhrzeit_bis;
-                        $km_start = isset($fahrt->km_start) ? $fahrt->km_start : 'N/A'; // Default-Wert, falls kein Wert vorhanden
-                        $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'N/A'; // Default-Wert, falls kein Wert vorhanden
-                        $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : 'N/A'; // Default-Wert, falls kein Wert vorhanden
+                        $km_start = isset($fahrt->km_start) ? $fahrt->km_start : 'Kein Wert eingegeben'; // Default-Wert, falls kein Wert vorhanden
+                        $km_end = isset($fahrt->km_end) ? $fahrt->km_end : 'Kein Wert eingegeben'; // Default-Wert, falls kein Wert vorhanden
+                        $kmdiff = isset($fahrt->kmdiff) ? $fahrt->kmdiff : 'Kein Wert eingegeben'; // Default-Wert, falls kein Wert vorhanden
                 
                         $tableRow = "
                                     <tr id=\"entry_<?php echo $id; ?>\">
                                         <td><img  width=\"30px\" height=\"30px\" src=\"imgs\/user.png\" alt=\"User Bild\">$name </td>
                                         <td>$wohnort</td>
                                         <td>$zweck</td>
-                                        <td>$datum</td>
-                                        <td>$uhrzeit_von</td>
-                                        <td>$uhrzeit_bis</td>
-                                        <td>$km_start</td>
-                                        <td>$km_end</td>
                                         <td>$kmdiff</td>
                                         
                                         <td><a class=\"detail\" href=\"detail.php?id=$id\">Detail</a></td>
@@ -149,7 +136,7 @@
                 ?>
             </tbody>
         </table>
-    </div>
+    </form>
 </body>
 
 </html>
