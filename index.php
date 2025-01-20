@@ -64,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <hr style="flex: 1; border-top: 2px solid rgba(0, 0, 0, 0.2); margin: 0 10px;">
             <i class="fa-regular fa-circle-check" style="font-size: 24px; margin-right: 10px; color: rgba(0, 0, 0, 0.2);"></i>
         </div>
-        <h4>Bitte die Eingaben überprüfen</h4>
-        <table style="padding-left:40px;">
+        <h3 style="padding-left:40px;">Bitte die Eingaben überprüfen</h3>
+        <table style="margin-left:50px;">
             <tr>
                 <th style="text-align:left;">Name:</th>
                 <td><?php echo htmlspecialchars($name); ?></td>
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td><?php echo htmlspecialchars($kmdiff); ?></td>
             </tr>
             <tr>
-                <td style="flex:left;">
+                <td >
                     <!-- Form to redirect with current data as query parameters -->
                     <form action="index1.php" method="post">
                         <input type="hidden" name="form_type" value="form1">
@@ -115,11 +115,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="hidden" name="uhrzeit_bis" value="<?php echo htmlspecialchars($uhrzeit_bis); ?>">
                         <input type="hidden" name="km_start" value="<?php echo htmlspecialchars($km_start); ?>">
                         <input type="hidden" name="km_end" value="<?php echo htmlspecialchars($km_end); ?>">
-                        <button type="submit" id="edit">Formular Bearbeiten <i
+                        <button type="submit" id="edit" style="margin-left:-20px;">Formular Bearbeiten <i
                                 class="fa-regular fa-pen-to-square"></i></button>
                     </form>
                 </td>
-                <td style="flex:right;">
+                <td style="margin-left:20px;">
                     <!-- Form to save data -->
                     <form action="saveFile.php" method="post">
                         <input type="hidden" name="name" value="<?php echo htmlspecialchars($name); ?>">
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="hidden" name="uhrzeit_bis" value="<?php echo htmlspecialchars($uhrzeit_bis); ?>">
                         <input type="hidden" name="km_start" value="<?php echo htmlspecialchars($km_start); ?>">
                         <input type="hidden" name="km_end" value="<?php echo htmlspecialchars($km_end); ?>">
-                        <button type="submit" id="next">Speichern <i class="fa-solid fa-floppy-disk"></i></button>
+                        <button type="submit" id="next" style="margin-left:-10px;">Speichern <i class="fa-solid fa-floppy-disk"></i></button>
                     </form>
                 </td>
             </tr>
