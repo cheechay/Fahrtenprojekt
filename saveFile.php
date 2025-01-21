@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </fieldset>
     </div>
     <footer>
-        <p>&copy;</p>
+        <p>&copy; 2025 Created by Priyanka, Zhazmira, Shella Mae</p>
     </footer>
 </body>
 </html>

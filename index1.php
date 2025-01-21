@@ -140,10 +140,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
   
     </div>
-    <footer>
-        <p>&copy;</p>
-    </footer>
 
+    <footer>
+        <p>&copy; 2025 Created by Priyanka, Zhazmira, Shella Mae</p>
+    </footer>
+    
     <script>
        function testEingabe(){
             const kmStart = parseFloat(document.getElementById('km_start').value) || 0;
