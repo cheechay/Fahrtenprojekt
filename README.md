@@ -174,9 +174,9 @@ https://www.w3schools.com/php/php_xml_simplexml_read.asp
 
 # Chat GPT:
 
-<!-- von Chat-Gpt:  -->
+von Chat-Gpt: 
 
-<!-- mit Promt -> 
+ mit Promt 
 
 1. Tabelle von Daten in xml - > syntax, beispiel für einen fahrtenbuch
 
@@ -194,7 +194,7 @@ https://www.w3schools.com/php/php_xml_simplexml_read.asp
 
 2. Löschen von Fahrten: Wenn der Benutzer die ID eingibt, löscht das Skript die entsprechende Fahrt aus der XML-Datei, basierend auf dieser ID.
 
- -->
+
 
  ----------------QUELL CODE in von CHAT-GPT------------------------------------------------------------------
 
