@@ -1,30 +1,41 @@
 # Fahrtenprojekt
 
-Plannung von der Dokumentation:
+## Inhaltsverzeichnis
+1. [Einleitung](#1-einleitung)
+2. [Teammitglieder und Aufgabenverteilung](#2-teammitglieder-und-aufgabenverteilung)
+3. [Anforderungen an das Projekt](#3-anforderungen-an-das-projekt)
+4. [Technische Umsetzung](#4-technische-umsetzung)
+5. [Verwendete Quellen/Literatur](#5-verwendete-quellenliteratur)
 
-1. [Einleitung](#beschreibung);
+---
 
-2. [Teammitglieder](#Aufgabenverteilung);
+## 1. Einleitung
 
-3. [Anforderungen an das Projekt];
+### Beschreibung
+Dieses Fahrtenbuch hilft dabei, Fahrten zu speichern. Im Formular können folgende Daten eingegeben werden:
+- Name
+- Uhrzeit
+- Datum
+- Startkilometer
+- Endkilometer
 
-4. [Technische Umsetzung] des Projekts, mögliche Fehler und Schwierigkeiten beim lernen und verstehen.
+Die Daten werden in einer **XML-Datei** gespeichert und in einer Tabelle angezeigt.
 
-----------------------------------
+### Projektziele
+Das Ziel des Projekts ist es, eine Webanwendung zu entwickeln, mit der Fahrten dokumentiert und angezeigt werden können. So kann die Person, die das Fahrtenbuch nutzt, ihre gefahrenen Strecken einfach eintragen und nachverfolgen.
 
-# 1. Einleitung ## beschreibung;
+### Verwendete Technologien
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: PHP
+- **Datenverarbeitung**: XML
 
-Beschreibung: Dieses Fahrtenbuch hilft dabei, Fahrten zu speichern. Im Formular kann man den Namen, Uhrzeit, Datum, Startkilometer und Endkilometer eingeben. Die Daten werden in einer XML-Datei gespeichert und als Tabelle angezeigt.
- 
-Projektziele:   Das Ziel des Projekts ist es, eine Webanwendung zu erstellen, mit der Fahrten dokumentiert und angezeigt werden können. So kann die Person, die das Fahrtenbuch nutzt, ihre gefahrenen Strecken einfach eintragen und nachverfolgen.
+### Projektmanagement
+- **Methode**: Scrum
+- **Trello-Board**: [Link zum Board](https://trello.com/b/4KgWJOKe/e2it1-priyankazhazmirashella)
+- **Repository**: 
+  ```bash
+  git clone https://github.com/cheechay/Fahrtenprojekt
 
-Welche Programmier Sprache und Technologien werden genutzt: PHP,HTML,XML,JS,CSS
-
-Projektmanagement: Scrum
-
-- Link zur Trello Board: https://trello.com/b/4KgWJOKe/e2it1-priyankazhazmirashella
-
-- Klone das Repository: git clone https://github.com/cheechay/Fahrtenprojekt;
 
 ----------------------------------
 
@@ -46,9 +57,11 @@ Projektmanagement: Scrum
   - Eingabeformular: **2,5 Punkte**
   - Handout: **4 Punkte**
 
+
 #### **Zhazmira Borubaeva**
-- **Rolle**: Scrum Master
+
 - **Aufgaben**:
+  - Scrum Master
   - Entwicklung des Ausgabeformulars
   - Projektdokumentation
 - **Story Points**:
@@ -56,7 +69,7 @@ Projektmanagement: Scrum
   - Projektdokumentation: **4 Punkte**
 
 #### **Priyanka KC**
-- **Rolle**: Entwickler/in
+
 - **Aufgaben**:
   - XML-Datenverarbeitung mit PHP
   - Korrektur falscher Daten in Auflistung
@@ -107,39 +120,108 @@ Ein kurzes Intro zu deinem Projekt.
 
 ### Projektstruktur
 
-#### 1. Eingabeformular
+#### 1. Eingabeformular - index.html
 
-Das Eingabeformular wird mit HTML erstellt und durch JavaScript validiert.
+Das Eingabeformular ermöglicht es den Nutzern, relevante Fahrtenbuchdaten wie Name, Wohnort, Zweck, Datum und Kilometerstände zu erfassen. Das Formular nutzt HTML zur Strukturierung und CSS für das visuelle Design. Es wird durch JavaScript validiert, um sicherzustellen, dass alle Pflichtfelder korrekt ausgefüllt werden, bevor die Daten übermittelt werden.
+
+***Wichtige Funktionen:***
+
+**Eingabefelder:** Ermöglichen die Eingabe von Name, Wohnort, Zweck, Datum, Kilometerständen und mehr.
+Google Maps Verlinkung: Ein eingebautes Google Maps-Icon bietet einen direkten Link zur Kartenanwendung, um den Standort schnell zu finden.
+
+**Datenvalidierung:** Verhindert die Übermittlung unvollständiger oder fehlerhafter Formulardaten.
+
+Der HTML-Code enthält auch eine benutzerfreundliche Gestaltung mit Feldern für die einfache Dateneingabe. Außerdem sind die Felder name, wohnort, und zweck als verpflichtend **(required)** validiert.
+
+
+**Automatisierte Berechnungen:** Eine Funktion zur Berechnung der gefahrenen Kilometer (Differenz zwischen km_start und km_ende) könnte implementiert werden.
 
 **Quelle** - https://www.w3schools.com/xml/xml_whatis.asp
 
-
-**HTML-Code für das Formular:** 
 ```html
 
-<form id="dataForm">
-  <label for="distance">Entfernung (in km):</label>
-  <input type="number" id="distance" name="distance" required min="0" step="0.1">
-  
-  <label for="date">Datum:</label>
-  <input type="date" id="date" name="date" required>
-  
-  <button type="submit">Absenden</button>
-</form>
+<html>
+
+<body>
+
+  <form action="welcome.php" method="POST">
+      Name: <input type="text" name="name"><br>
+      E-mail: <input type="text" name="email"><br>
+    <input type="submit">
+  </form>
+
+</body>
+</html>
+
+-- @Quelle - https://www.w3schools.com/html/html_form_attributes.asp
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+
 
 ```
 
 
 # 2. Datenverarbeitung mit PHP:
 
-Die eingegebenen Daten werden im Backend verarbeitet und in einer XML-Datei gespeichert.
+Die Verarbeitung und Speicherung der Benutzereingaben in einer XML-Datei. Dies wird durch die Verarbeitung des Formulars in PHP realisiert.
 
-**PHP-Code zum Speichern der Daten:**
+2.1. Eingabedaten aus dem Formular
+Die Benutzerdaten werden mittels $_POST-Methode an das Backend übermittelt und anschließend mit der Funktion filter_input() validiert.
 
--*** Quelles: ***-
+```php
 
-***ChatGPT***
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
+    $wohnort = filter_input(INPUT_POST, 'wohnort', FILTER_DEFAULT);
+    $zweck = filter_input(INPUT_POST, 'zweck', FILTER_DEFAULT);
+    $datum = $_POST['datum'];
+    $km_start = filter_input(INPUT_POST, 'km_start', FILTER_DEFAULT);
+    $km_end = filter_input(INPUT_POST, 'km_end', FILTER_DEFAULT);
+    $uhrzeit_von = filter_input(INPUT_POST, 'uhrzeit_von', FILTER_DEFAULT);
+    $uhrzeit_bis = filter_input(INPUT_POST, 'uhrzeit_bis', FILTER_DEFAULT);
 
+    // Berechnung der Kilometerdifferenz
+    $kmdiff = (int) $km_end - (int) $km_start;
+}
+
+```
+
+
+
+
+
+2.2. Datenvalidierung und Fehlerbehandlung
+
+
+Der Kilometer-Endwert (km_end) darf nicht kleiner sein als der Kilometer-Startwert (km_start).
+
+Die Endzeit (uhrzeit_bis) darf nicht vor der Startzeit (uhrzeit_von) liegen.
+
+```javascript
+
+if (uhrzeit_von >= uhrzeit_bis && kmStart >= kmEnd) {
+    alert('Bitte, Eingaben überprüfen☹️ !!');
+    return false;
+}
+```
+
+
+2.3. Speicherung der Daten in einer XML-Datei
+
+In PHP wird dazu ein SimpleXMLElement-Objekt genutzt, um die Daten in die XML-Struktur einzufügen.
+
+```php
+$xml = simplexml_load_file('fahrtenbuch.xml'); // Laden der bestehenden XML-Datei
+$entry = $xml->addChild('entry');
+$entry->addChild('name', $name);
+$entry->addChild('wohnort', $wohnort);
+usw.
+$xml->asXML('fahrtenbuch.xml'); // Speichern der aktualisierten XML-Datei
+
+```
 
 ```xml
 
@@ -152,58 +234,28 @@ Die eingegebenen Daten werden im Backend verarbeitet und in einer XML-Datei gesp
 
 ```
 
-
-
 #### 3 Ausgabe-Formular 
 
----*** Quelles: ***---: 
+Datenquelle (XML-Datei):
 
-***ChatGPT***, https://www.php.net/manual/en/simplexml.examples-basic.php,  
+Alle Einträge des Fahrtenbuchs werden aus einer XML-Datei (fahrtenbuch.xml) geladen. Dies ist eine einfache Möglichkeit, um strukturierte Daten zu speichern und sie auf einer Webseite anzuzeigen. Das Format ermöglicht eine einfache Integration und Bearbeitung
 
-# Screenshots:
+- Die **$_GET-Anfrage** wird verwendet, um das Löschen eines Eintrags zu verarbeiten, indem die **delete_id-Variable** überprüft wird.
 
-https://www.php.net/manual/en/simplexml.examples-basic.php
-
-![alt text](image.png) - > (cmd+click);
-
-![alt text](image-1.png) - > (cmd+click);
-
-https://www.w3schools.com/php/php_xml_simplexml_read.asp
-
- ![alt text](image-2.png)
-
-# Chat GPT:
-
-von Chat-Gpt: 
-
- mit Promt 
-
-1. Tabelle von Daten in xml - > syntax, beispiel für einen fahrtenbuch
-
-2. Get daten um das zu ergzeugen in xml
-
-3. Verwende eine foreach-Schleife, um das Array zu durchlaufen und für jedes Element einen neuen Eintrag in
- der XML-Datei zu erstellen.
-
-4. Speichere die XML-Datei nach dem Hinzufügen der neuen Einträge.
+- Wenn ein Eintrag gelöscht werden soll, wird der entsprechende Eintrag aus der XML-Datei entfernt und die Datei neu gespeichert.
+- Das XML-Dokument wird nach dem Löschen neu geladen, um die aktuelle Version anzuzeigen.
+- Die foreach-Schleife durchläuft die XML-Daten und gibt für jeden Eintrag die relevanten Informationen in der Tabelle aus
 
 
-"Schreibe ein PHP-Skript, das zwei Aufgaben erledigt:
-
-1. Ausgabeformular mit ID: Ein Formular, das ein id-Attribut enthält, mit dem der Benutzer die ID einer Fahrt angeben kann.
-
-2. Löschen von Fahrten: Wenn der Benutzer die ID eingibt, löscht das Skript die entsprechende Fahrt aus der XML-Datei, basierend auf dieser ID.
-
-
-
- ----------------QUELL CODE in von CHAT-GPT------------------------------------------------------------------
+- Fehlerbehandlung.
+Das Formular überprüft, ob die XML-Datei korrekt geladen werden kann und gibt eine Fehlermeldung aus, wenn keine Fahrten vorhanden sind
 
 ```php
 
 $xml = simplexml_load_file('data.xml'); //Erstellt'fahrtenbuch.xml' Datei wo, meine Ausgabe-Formular gespechert muss
 
-// Ausgabe wird ist als eine Tabelle generiert
-// mit der Foreach-schleife
+Ausgabe wird ist als eine Tabelle generiert
+mit der Foreach-schleife
 
 echo "<table border='1'>";
 echo "<tr><th>Entfernung (km)</th><th>Datum</th></tr>";
@@ -217,7 +269,7 @@ foreach ($xml->entry as $entry) {
 
 echo "</table>";
 
-//jede erstellte Ausgabe-Fahrten haben id, damit wir mit diesen id-s zugreifen können -> entweder löschen oder bearbeiten;
+-- jede erstellte Ausgabe-Fahrten haben id, damit wir mit diesen id-s zugreifen können -> entweder löschen oder bearbeiten;
 
 $id = isset($fahrt['id']) ? $fahrt['id'] : '';
 $delete_id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
@@ -232,19 +284,33 @@ foreach ($xml->fahrten as $key => $fahrt) {
 
 ```
 
-```xml
+# Quelles: 
 
-<fahrtenbuch>
-  <fahrten id="1">
-    <name>test one</name>
-    <wohnort>Berlin</wohnort>
-  </fahrten>
-  <fahrten id="2">
-    <name>test two</name>
-    <wohnort>Hamburg</wohnort>
-  </fahrten>
-</fahrtenbuch>
+https://www.php.net/manual/en/simplexml.examples-basic.php,  
 
-```
+***Screenshots:***
+
+https://www.php.net/manual/en/simplexml.examples-basic.php
+
+![alt text](image.png) - > (cmd+click);
+
+![alt text](image-1.png) - > (cmd+click);
+
+https://www.w3schools.com/php/php_xml_simplexml_read.asp
+
+ ![alt text](image-2.png)
+
+# Chat-GPT Prompts:
+
+ChatGPT: Verwendet als Codeassistent um Unklarheiten in fremdem Code (Teammitglieder) zu verstehen oder um neue Möglichkeiten aufgezeigt zu bekommen wie bestimmte Probleme gelöst werden können.
+
+Prompt Beispiele hierfür:
+
+- foreach schleife in array die daten hizufügen
+- id xml
+
+
+
+
 
 
