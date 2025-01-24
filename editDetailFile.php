@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                <div class="btn_container">
-                    <button class="abbrechen" type="submit" onclick="window.location.href='ausgabe.php';" style="margin-left:-10px;">Abbrechen 
+                    <button class="abbrechen" type="button" onclick="window.location.href='ausgabe.php';" style="margin-left:-10px;">Abbrechen 
                    <i class="fa-regular fa-circle-xmark"></i></button>
 
                                                 <div >

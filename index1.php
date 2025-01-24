@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </tr>
                 </table>
                 <div class="btn_container">
-                   <button class="abbrechen" type="submit" onclick="window.location.href='index.html';" style="margin-left:-10px;">Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
+                   <button class="abbrechen" type="button" onclick="window.location.href='index.html';" style="margin-left:-10px;">Abbrechen <i class="fa-regular fa-circle-xmark"></i></button>
 
                     <button type="submit" onclick="return testEingabe()" style="margin-left:50px;"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
                                    </div>
