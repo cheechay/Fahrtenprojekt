@@ -58,7 +58,7 @@
 
                     $xmlFile = 'fahrtenbuch.xml';
 
-                    $xml = simplexml_load_file('fahrtenbuch.xml') or die("<p>Es sind gerade keine Fahrten eingetragen</p>");
+                    $xml = simplexml_load_file($xmlFile) or die("<p>Es sind gerade keine Fahrten eingetragen</p>");
 
                     $id = isset($fahrt['id']) ? $fahrt['id'] : '';
                     $delete_id = isset($fahrt['id']) ? $fahrt['id'] : '';
@@ -93,7 +93,6 @@
                     
                         $xml->asXML($xmlFile);
 
-                        $xml = simplexml_load_file('fahrtenbuch.xml') or die("<p>Es sind gerade keine Fahrten eingetragen</p>");
                         $num = 1;
                         foreach ($xml->fahrten as $fahrt) {
                             (int) $fahrt['id'] = $num;

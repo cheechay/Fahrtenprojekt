@@ -12,6 +12,7 @@
 ## 1. Einleitung
 
 ### Beschreibung
+
 Dieses Fahrtenbuch hilft dabei, Fahrten zu speichern. Im Formular können folgende Daten eingegeben werden:
 - Name
 - Uhrzeit
@@ -30,9 +31,9 @@ Das Ziel des Projekts ist es, eine Webanwendung zu entwickeln, mit der Fahrten d
 - **Datenverarbeitung**: XML
 
 ### Projektmanagement
-- **Methode**: Scrum
-- **Trello-Board**: [Link zum Board](https://trello.com/b/4KgWJOKe/e2it1-priyankazhazmirashella)
-- **Repository**: 
+- **Methode**: Es wurde Methode scrum benutzt, 
+- Zur Verfolgung wurde **Trello-Board** benutzt [Link zum Board](https://trello.com/b/4KgWJOKe/e2it1-priyankazhazmirashella)
+- für Version Control haben uns für Git-Hub entschiden **Repository**: 
   ```bash
   git clone https://github.com/cheechay/Fahrtenprojekt
 
@@ -50,32 +51,28 @@ Das Ziel des Projekts ist es, eine Webanwendung zu entwickeln, mit der Fahrten d
 
 #### **Shella Mae Friedlein**
 - **Rolle**: Entwickler/in
+
 - **Aufgaben**:
   - Erstellung des Eingabeformulars
   - Design des Formulars
-- **Story Points**:
-  - Eingabeformular: **2,5 Punkte**
-  - Handout: **4 Punkte**
+
 
 
 #### **Zhazmira Borubaeva**
 
 - **Aufgaben**:
+
   - Scrum Master
   - Entwicklung des Ausgabeformulars
   - Projektdokumentation
-- **Story Points**:
-  - Ausgabeformular: **2 Punkte**
-  - Projektdokumentation: **4 Punkte**
+
 
 #### **Priyanka KC**
 
 - **Aufgaben**:
   - XML-Datenverarbeitung mit PHP
   - Korrektur falscher Daten in Auflistung
-- **Story Points**:
-  - XML-Datenverarbeitung: **5 Punkte**
-  - Fehlerbehebung: **1,5 Punkte**
+
 
 ----------------------------------
 
@@ -102,22 +99,8 @@ Das Ziel des Projekts ist es, eine Webanwendung zu entwickeln, mit der Fahrten d
 ----------------------------------
 
 
-# Projektname
-
-Ein kurzes Intro zu deinem Projekt.
-
--
-
 ## 4 Technische Umsetzung
 
-### Technologien und Tools
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: PHP
-- **Datenverarbeitung**: XML
-- **Versionierung**: Git und GitHub
-- **Projektmanagement**: Scrum-Methodik
-
--
 
 ### Projektstruktur
 
@@ -135,9 +118,9 @@ Google Maps Verlinkung: Ein eingebautes Google Maps-Icon bietet einen direkten L
 Der HTML-Code enthält auch eine benutzerfreundliche Gestaltung mit Feldern für die einfache Dateneingabe. Außerdem sind die Felder name, wohnort, und zweck als verpflichtend **(required)** validiert.
 
 
-**Automatisierte Berechnungen:** Eine Funktion zur Berechnung der gefahrenen Kilometer (Differenz zwischen km_start und km_ende) könnte implementiert werden.
+**Automatisierte Berechnungen:** Eine Funktion zur Berechnung der gefahrenen Kilometer (Differenz zwischen km_start und km_ende) wurde implementiert werden.
 
-**Quelle** - https://www.w3schools.com/xml/xml_whatis.asp
+
 
 ```html
 
@@ -145,31 +128,45 @@ Der HTML-Code enthält auch eine benutzerfreundliche Gestaltung mit Feldern für
 
 <body>
 
-  <form action="welcome.php" method="POST">
-      Name: <input type="text" name="name"><br>
-      E-mail: <input type="text" name="email"><br>
-    <input type="submit">
-  </form>
+<!-- VERKÜRZTE CODE -->
+
+        <form action="index.php" method="POST">
+            <fieldset>
+                <legend>Tragen Sie ein</legend>
+
+                <table class="info-section">
+                    <tr>
+                        <td><label for="name"> Name</label></td>
+                        <td colspan="2"><input type="text" name="name" id="name" size="35" required></td>
+                        <td rowspan="3">
+                            <a href="https://www.google.com/maps/" target="_blank"><img src="map.png" alt="google map"
+                                    width="100" height="115"></a>
+                            <p>Suchen auf Google map </p>
+                        </td>
+
+                        <!-- Tabelle: <td> + inputs und labels Tags des Codes -->
+<!-- 
+                         Button "Abgeben", der übernimmt dir Javascript Funktion testEingabe(), um die daten (km_start und km_ende) zu Valideiren: -->
+
+                    <div class="btn-submit" style="margin-left:50px;">
+                        <button type="submit" onclick="return testEingabe()"> Abgeben <i class="fa-regular fa-circle-right"></i></button>
+                    </div>
+           </fieldset>
+        </form>
 
 </body>
 </html>
 
--- @Quelle - https://www.w3schools.com/html/html_form_attributes.asp
-
-![alt text](image-3.png)
-
-![alt text](image-4.png)
-
-
-
 ```
+
 
 
 ### 2. Datenverarbeitung mit PHP:
 
-Die Verarbeitung und Speicherung der Benutzereingaben in einer XML-Datei. Dies wird durch die Verarbeitung des Formulars in PHP realisiert.
+Die Verarbeitung und Speicherung der Benutzereingaben in einer XML-Datei. Das wird durch die Verarbeitung des Formulars in PHP realisiert.
 
 2.1. Eingabedaten aus dem Formular
+
 Die Benutzerdaten werden mittels $_POST-Methode an das Backend übermittelt und anschließend mit der Funktion filter_input() validiert.
 
 ```php
@@ -190,10 +187,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ```
 
-
-
-
-
 2.2. Datenvalidierung und Fehlerbehandlung
 
 
@@ -213,6 +206,7 @@ if (uhrzeit_von >= uhrzeit_bis && kmStart >= kmEnd) {
 2.3. Speicherung der Daten in einer XML-Datei
 
 In PHP wird dazu ein SimpleXMLElement-Objekt genutzt, um die Daten in die XML-Struktur einzufügen.
+
 
 ```php
 $xml = simplexml_load_file('fahrtenbuch.xml'); // Laden der bestehenden XML-Datei
@@ -239,24 +233,87 @@ $xml->asXML('fahrtenbuch.xml'); // Speichern der aktualisierten XML-Datei
 
 Datenquelle (XML-Datei):
 
-Alle Einträge des Fahrtenbuchs werden aus einer XML-Datei (fahrtenbuch.xml) geladen. Dies ist eine einfache Möglichkeit, um strukturierte Daten zu speichern und sie auf einer Webseite anzuzeigen. Das Format ermöglicht eine einfache Integration und Bearbeitung
+Alle Einträge des Fahrtenbuchs werden aus einer XML-Datei (fahrtenbuch.xml) geladen. Das ist eine einfache Möglichkeit, um Daten zu speichern.
 
-- Die **$_GET-Anfrage** wird verwendet, um das Löschen eines Eintrags zu verarbeiten, indem die **delete_id-Variable** überprüft wird.
+- Die **$_GET-Anfrage** wird verwendet, um daten zu bekommen.
 
-- Wenn ein Eintrag gelöscht werden soll, wird der entsprechende Eintrag aus der XML-Datei entfernt und die Datei neu gespeichert.
+- Wenn ein Eintrag gelöscht werden soll, wird der entsprechende Eintrag aus der XML-Datei entfernt und die Datei neu  gespeichert.
+
 - Das XML-Dokument wird nach dem Löschen neu geladen, um die aktuelle Version anzuzeigen.
+
 - Die foreach-Schleife durchläuft die XML-Daten und gibt für jeden Eintrag die relevanten Informationen in der Tabelle aus
 
-
 - Fehlerbehandlung.
-Das Formular überprüft, ob die XML-Datei korrekt geladen werden kann und gibt eine Fehlermeldung aus, wenn keine Fahrten vorhanden sind
+
+Das Formular überprüft, ob die XML-Datei korrekt geladen werden kann und gibt eine Meldung aus, wenn keine Fahrten vorhanden sind
 
 ```php
+$xmlFile = 'fahrtenbuch.xml';
+$xml = simplexml_load_file($xmlFile) or die("<p>Es sind gerade keine Fahrten eingetragen</p>");
 
-$xml = simplexml_load_file('data.xml'); //Erstellt'fahrtenbuch.xml' Datei wo, meine Ausgabe-Formular gespechert muss
+$id = isset($fahrt['id']) ? $fahrt['id'] : '';
+$delete_id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
 
-Ausgabe wird ist als eine Tabelle generiert
-mit der Foreach-schleife
+$fahrtenArray = [];
+
+foreach ($xml->fahrten as $key => $fahrt) {
+    // Überprüfe, ob das 'id'-Attribut der ID entspricht
+    if ((string)$fahrt['id'] === (string)$deleteId) {
+        // Lösche das Element
+        unset($xml->fahrten[$key]);
+    }
+}
+
+```
+
+
+
+# 5 Verwendete Quellen/Literatur
+
+**Quelle** für Eingabe Formular:
+
+https://www.w3schools.com/xml/xml_whatis.asp
+
+
+**Quelle** für PHP und XML lernen und die Daten ausgeben:
+
+https://www.php.net/manual/en/simplexml.examples-basic.php
+
+![alt text](image.png) - > (cmd+click);
+
+![alt text](image-1.png) - > (cmd+click);
+
+https://www.w3schools.com/php/php_xml_simplexml_read.asp
+
+ ![alt text](image-2.png)
+
+*Display* data from xml file in a table php
+
+ https://stackoverflow.com/questions/48904647/display-data-from-xml-file-in-a-table-php
+
+![1737811592462](image/Projektdocimentation/1737811592462.png)
+
+***Quelle PHP***:
+
+https://www.php.net/manual/de/function.unset.php
+
+foreach ARRAY:
+
+https://www.php.net/manual/en/control-structures.foreach.php
+
+# Chat-GPT Prompts:
+
+ChatGPT: Verwendet als Codeassistent um Unklarheiten in fremdem Code (Teammitglieder) zu verstehen oder um neue Möglichkeiten aufgezeigt zu bekommen wie bestimmte Probleme gelöst werden können.
+
+Prompt Beispiele hierfür:
+
+- Formular validieren, was muss man beachten
+
+- foreach schleife in array die daten hizufügen
+
+- PHP-Syntax für `echo`, das HTML-Tags mit einer PHP-Variable kombiniert.
+
+```php
 
 echo "<table border='1'>";
 echo "<tr><th>Entfernung (km)</th><th>Datum</th></tr>";
@@ -270,53 +327,25 @@ foreach ($xml->entry as $entry) {
 
 echo "</table>";
 
--- jede erstellte Ausgabe-Fahrten haben id, damit wir mit diesen id-s zugreifen können -> entweder löschen oder bearbeiten;
+```
 
-$id = isset($fahrt['id']) ? $fahrt['id'] : '';
-$delete_id = isset($fahrt['id']) ? $fahrt['id'] : ''; 
+- Ich habe XML-Daten erhalten, die Fahrten repräsentieren. Jede Fahrt hat eine eindeutige ID (z. B. <fahrt id="1">).  wie kann ich die löchen;
 
-foreach ($xml->fahrten as $key => $fahrt) {
-    // Überprüfe, ob das 'id'-Attribut der ID entspricht
-    if ((string)$fahrt['id'] === (string)$deleteId) {
-        // Lösche das Element
-        unset($xml->fahrten[$key]);
+
+```php
+$xml = new SimpleXMLElement($xmlString);
+
+// Fahrt mit ID "1" löschen
+foreach ($xml->fahrt as $index => $fahrt) {
+    if ((string) $fahrt['id'] === '1') { // ID prüfen
+        unset($xml->fahrt[$index]); // Fahrt löschen
     }
 }
 
+// Geändertes XML anzeigen
+echo $xml->asXML();
+
 ```
-
-# 5 Verwendete Quellen/Literatur
-
-https://www.php.net/manual/en/simplexml.examples-basic.php,  
-
-***Screenshots:***
-
-https://www.php.net/manual/en/simplexml.examples-basic.php
-
-![alt text](image.png) - > (cmd+click);
-
-![alt text](image-1.png) - > (cmd+click);
-
-https://www.w3schools.com/php/php_xml_simplexml_read.asp
-
- ![alt text](image-2.png)
-
-# Chat-GPT Prompts:
-
-ChatGPT: Verwendet als Codeassistent um Unklarheiten in fremdem Code (Teammitglieder) zu verstehen oder um neue Möglichkeiten aufgezeigt zu bekommen wie bestimmte Probleme gelöst werden können.
-
-Prompt Beispiele hierfür:
-
-- foreach schleife in array die daten hizufügen
-
-- PHP-Syntax für `echo`, das HTML-Tags mit einer PHP-Variable kombiniert.
-
-- Ich habe XML-Daten erhalten, die Fahrten repräsentieren. Jede Fahrt hat eine eindeutige ID (z. B. <fahrt id="1">). Ich möchte wissen, wie ich diese XML-Daten manipulieren kann. Konkret brauche ich:
-
-Wie kann ich die ID-Werte auslesen und ggf. ändern?
-Wie füge ich neue Fahrten mit einer ID hinzu?
-
-
 
 
 
