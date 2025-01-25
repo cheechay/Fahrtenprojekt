@@ -90,7 +90,7 @@
                             $fahrten->addChild('kmdiff', (string) $fahrt->kmdiff);
                         }
 
-                        // Speichere die geänderte XML-Datei
+                    
                         $xml->asXML($xmlFile);
 
                         $xml = simplexml_load_file('fahrtenbuch.xml') or die("<p>Es sind gerade keine Fahrten eingetragen</p>");
@@ -102,7 +102,7 @@
                         }
                         $xml->asXML($xmlFile);
 
-                        // Seite neu laden, um den aktualisierten Stand anzuzeigen
+                      
                         header("Location: " . $_SERVER['PHP_SELF']);
                         exit;
                     }

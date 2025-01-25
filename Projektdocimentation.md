@@ -39,7 +39,7 @@ Das Ziel des Projekts ist es, eine Webanwendung zu entwickeln, mit der Fahrten d
 
 ----------------------------------
 
-## Aufgabenverteilung
+## 2 Teammitglieder und Aufgabenverteilung
 
 ### Projekt-Owner
 - **Oliver Metzger**
@@ -79,7 +79,7 @@ Das Ziel des Projekts ist es, eine Webanwendung zu entwickeln, mit der Fahrten d
 
 ----------------------------------
 
-## Anforderungen an das Projekt
+## 3 Anforderungen an das Projekt
 
 1. **Validierung**:
    - Das Eingabeformular muss validiert werden, um sicherzustellen, dass alle Eingaben korrekt und vollständig sind.
@@ -94,6 +94,7 @@ Das Ziel des Projekts ist es, eine Webanwendung zu entwickeln, mit der Fahrten d
    - Sowohl das Eingabe- als auch das Ausgabeformular müssen übersichtlich und leicht verständlich gestaltet sein.
 
 5. **Einheitenprüfung**:
+
    - Die eingegebenen Daten müssen mit den richtigen Einheiten (z. B. Kilometer, Datumsformate) versehen und verarbeitet werden.
 
 
@@ -107,7 +108,7 @@ Ein kurzes Intro zu deinem Projekt.
 
 -
 
-## Technische Umsetzung des Projekts
+## 4 Technische Umsetzung
 
 ### Technologien und Tools
 - **Frontend**: HTML, CSS, JavaScript
@@ -164,7 +165,7 @@ Der HTML-Code enthält auch eine benutzerfreundliche Gestaltung mit Feldern für
 ```
 
 
-# 2. Datenverarbeitung mit PHP:
+### 2. Datenverarbeitung mit PHP:
 
 Die Verarbeitung und Speicherung der Benutzereingaben in einer XML-Datei. Dies wird durch die Verarbeitung des Formulars in PHP realisiert.
 
@@ -284,7 +285,7 @@ foreach ($xml->fahrten as $key => $fahrt) {
 
 ```
 
-# Quelles: 
+# 5 Verwendete Quellen/Literatur
 
 https://www.php.net/manual/en/simplexml.examples-basic.php,  
 
@@ -307,7 +308,19 @@ ChatGPT: Verwendet als Codeassistent um Unklarheiten in fremdem Code (Teammitgli
 Prompt Beispiele hierfür:
 
 - foreach schleife in array die daten hizufügen
-- id xml
+
+- PHP-Syntax für `echo`, das HTML-Tags mit einer PHP-Variable kombiniert.
+
+- Ich habe XML-Daten erhalten, die Fahrten repräsentieren. Jede Fahrt hat eine eindeutige ID (z. B. <fahrt id="1">). Ich möchte wissen, wie ich diese XML-Daten manipulieren kann. Konkret brauche ich:
+
+Wie kann ich die ID-Werte auslesen und ggf. ändern?
+Wie füge ich neue Fahrten mit einer ID hinzu?
+
+
+
+
+
+
 
 
 
